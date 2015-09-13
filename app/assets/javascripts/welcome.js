@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   var acOptions = {
-    types: ['establishment']
+    types: ['food']
   };
   var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
   autocomplete.bindTo('bounds',map);
@@ -30,7 +30,7 @@ $(document).ready(function(){
       map.fitBounds(place.geometry.viewport);
     } else {
       map.setCenter(place.geometry.location);
-      map.setZoom(17);
+      map.setZoom(15);
     }
     marker.setPosition(place.geometry.location);
     infoWindow.setContent('<div><strong>' + place.name + '</strong><br>');
