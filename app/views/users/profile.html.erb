@@ -1,4 +1,60 @@
+<input type="hidden" id="api-token" value="<%= @user.token %>">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.2/backbone.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+    var apiToken = $('#api-token').val();
+    $.ajaxSetup({
+        headers: {
+            "token": apiToken
+        }
+    })
+
+</script>
+
+
+
 <h3>welcome back <%= @user.username %></h3>
 
 
 <%= button_to "Log Out", '/sessions', method: :delete %>
+
+
+
+
+<ul class="visits">
+
+</ul>
+
+<script type="text/javascript">
+
+
+var Visit = Backbone.Model.extend({});
+var VisitCollection = Backbone.Collection.extend({
+    model: Visit,
+    url: '/api/visits'
+});
+
+var VisitListView = Backbone.View.extend({
+    initialize: function(){
+        this.listenTo(this.collection, 'add', this.render);
+    },
+    render: function(){
+        this.$el.empty();
+        var visits = this.collection.models;
+        for (var i = 0; i < visits.length; i++) {
+            this.$el.append(visits[i].get('review'));
+        }
+    }
+});
+
+var allTheVisits = new VisitCollection();
+var visitsPainter = new VisitListView({
+    collection: allTheVisits,
+    el: $('.visits')
+});
+allTheVisits.fetch();
+
+</script>

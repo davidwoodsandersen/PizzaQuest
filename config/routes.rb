@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+#this will be removed, it's just part of the exercise
+  # get '/users/demo' => "users#demo"
+
+  namespace :api do
+      resources :visits, except: [:new, :edit]
+  end
+
   get '/users/profile' => 'users#profile', as: :profile
   get '/users/log_in' => 'users#log_in', as: :log_in
   resources :users, only: [:new, :create]
