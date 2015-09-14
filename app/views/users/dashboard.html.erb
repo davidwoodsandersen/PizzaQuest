@@ -11,13 +11,15 @@
                 <div class="row">
                     <div class="col-sm-6">
 
-                      <% if @user.image != nil %>
 
-                      <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
-
-                      <% else %>
+                      <% if @user.image.length == 0 %>
 
                       <%= image_tag("noprof.png", :class => "dashboard-image") %>
+
+
+                      <% elsif @user.image %>
+
+                      <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
 
                       <% end %>
 
