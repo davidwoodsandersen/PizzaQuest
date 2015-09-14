@@ -27,9 +27,6 @@ class UsersController < ApplicationController
 
     end
 
-
-
-
     # get '/users/log_in' => 'users#log_in', as: :log_in
     def log_in
     end
