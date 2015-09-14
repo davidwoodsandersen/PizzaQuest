@@ -22,7 +22,7 @@ Contents:
 /* 1. General  */
 
 body {
-  background: url('../images/background3.jpg'); /* 6 background images in image folder (backgroundX.jpg) */
+  background: url('background3.jpg'); /* 6 background images in image folder (backgroundX.jpg) */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
