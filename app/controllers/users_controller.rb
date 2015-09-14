@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
 
     def dashboard
+        authenticate!
+        @user = current_user
     end
 
     # get '/users/profile' => 'users#profile', as: :profile
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :password, :image)
     end
 
 

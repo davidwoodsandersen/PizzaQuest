@@ -7,12 +7,24 @@
 
 
                 <div class="row">
-                    <div class="col-sm-12">
-                      <%= image_tag("sampleprof.png", :class => "dashboard-image") %>
-                      <h1 class="dashboard-username">Nicholas123</h1>
+                    <div class="col-sm-6">
+
+
+
+                      <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
+
+
+                      <h1 class="dashboard-username"> <%= @user.username %> </h1>
                       <p class="dashboard-total">8374627 Points</p>
                       <p class="dashboard-rank">Current Ranking: #93</p>
                     </div>
+
+                    <div class="col-sm-6">
+
+                      <h1 class="dashboard-welcome">Welcome back, <%= @user.username %></h1>
+
+                    </div>
+
                 </div>
 
 
