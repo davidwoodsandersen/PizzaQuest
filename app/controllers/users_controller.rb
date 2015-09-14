@@ -20,6 +20,10 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+
+    def dashboard
+    end
+
     # get '/users/profile' => 'users#profile', as: :profile
     def profile
         authenticate!

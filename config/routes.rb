@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :visits, except: [:new, :edit]
   end
 
+
+  get '/users/dashboard' => 'users#dashboard', as: :dashboard
   get '/users/profile' => 'users#profile', as: :profile
   get '/users/log_in' => 'users#log_in', as: :log_in
   resources :users, only: [:new, :create]
