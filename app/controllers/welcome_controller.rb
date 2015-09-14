@@ -6,4 +6,6 @@ class WelcomeController < ApplicationController
   def map
   end
 
+  def dashboard
+  end 
 end

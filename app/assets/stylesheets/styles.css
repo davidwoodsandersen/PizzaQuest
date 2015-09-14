@@ -21,11 +21,27 @@ Contents:
 
 /* 1. General  */
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background: url('background3.jpg'); /* 6 background images in image folder (backgroundX.jpg) */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+#map{
+  height: 100%;
+  margin: 0;
+}
+
+.map-container {
+  height: 500px;
+  margin: 0;
+  border: 8px solid #e3e3e3;
 }
 
 .change-nav { /* Makes styling changes to navbar at the top of every page */
