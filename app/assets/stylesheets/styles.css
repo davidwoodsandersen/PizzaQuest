@@ -1,0 +1,231 @@
+/* Custom Stylesheet for PizzaQuest */
+
+
+
+
+/*
+
+Contents:
+
+  1. General
+  2. Helpers --> Quick style fixes used in multiple places
+  3. Forms
+  4. Page-specific
+      4a. Homepage
+      4b. Dashboard page
+      4c. Profile page
+
+*/
+
+
+
+/* 1. General  */
+
+body {
+  background: url('../images/background3.jpg'); /* 6 background images in image folder (backgroundX.jpg) */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.change-nav { /* Makes styling changes to navbar at the top of every page */
+  background-color: #fafafa;
+  border: 0px;
+  border-bottom: 1px solid #e3e3e3;
+  border-radius: 0px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand { /* Adjusts the position of the logo to center it with the other links */
+  margin-top: -2px;
+}
+
+
+
+
+
+/* 2. Helpers */
+
+.block { /* Adds grey background w/ subtle border to a div */
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #e3e3e3;
+}
+
+.class-with-space { /* Adds extra padding/margin to a div */
+  margin: 30px 10px 10px 10px;
+  padding: 20px;
+}
+
+.red { /* Adds red background to a div */
+  background-color: rgba(235, 77, 61, 0.9); /* HEX: #EB4D3D */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.white { /* Adds white background to a div */
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  padding-bottom: 70px; /* This is mainly here to keep the submit button inside the div on the homepage */
+}
+
+
+
+
+
+
+/* 3. Forms */
+
+label {
+  margin-top: 8px;
+}
+
+form {
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: #F1F1F1;
+}
+
+input[type="submit"] {
+  float: right;
+  margin-top: 8px;
+  border: 0px;
+  padding: 10px;
+  background-color: #EB4D3D;
+  font-size: 18px;
+  color: white;
+}
+
+select {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: #F1F1F1;
+}
+
+
+
+
+
+
+
+/* 4. Page-specific */
+
+
+      /* 4a. Homepage */
+
+      .leaderboard-header {
+        margin: 0px 4px 10px 12px;
+        border-bottom: 1px dotted #fff;
+        color: white;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0px #666666;
+      }
+
+      ol li {
+        padding: 4px;
+        font-size: 16px;
+        color: white;
+        text-shadow: 1px 1px 0px #666666;
+      }
+
+      .points {
+        float: right;
+        color: gold;
+        font-weight: bold;
+      }
+
+      .red h3 { /* Styles the "Top Ten" header atop the leaderboard */
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        color: gold;
+        text-shadow: 1px 1px 0px #666666;
+      }
+
+
+
+
+
+      /* 4b. Dashboard */
+
+      .dashboard-image {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        float: left;
+      }
+
+      .dashboard-username {
+        color: #222222;
+        font-size: 20px;
+      }
+
+      .dashboard-total {
+        color: #FF6347;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .dashboard-rank {
+        color: #222222;
+        font-size: 15px;
+      }
+
+      .map {
+        box-sizing: border-box;
+        width: 100%;
+        border: 15px solid #e3e3e3;
+      }
+
+
+
+
+      /* 4c. Profile */
+
+      .profile-username {
+        text-align: center;
+        font-size: 45px;
+        color: #222222;
+      }
+
+      .profile-image {
+        margin-left: 20px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        float: left;
+      }
+
+      .profile-points {
+        font-size: 18px;
+        font-weight: bold;
+        color: #FF6347;
+      }
+
+      .profile-ranking {
+        font-size: 18px;
+        font-weight: bold;
+        color: #222222;
+      }
+
+      .profile-bio {
+        font-size: 14px;
+        color: #888888;
+      }
