@@ -14,3 +14,5 @@ Rails.application.config.assets.precompile += %w( users.js )
 
 
 Rails.application.config.assets.precompile += %w( styles.css )
+Rails.application.config.assets.precompile += %w( map.js )
+Rails.application.config.assets.precompile += %w( map.css )
