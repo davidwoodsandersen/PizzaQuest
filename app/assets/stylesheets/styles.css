@@ -71,6 +71,15 @@ body {
   padding-bottom: 70px; /* This is mainly here to keep the submit button inside the div on the homepage */
 }
 
+.col-centered { /* Lets you center a column of any width */
+    float: none;
+    margin: 0 auto;
+}
+
+.extra-bottom { /* Adds extra space to the bottom of a div/element */
+  padding-bottom: 70px;
+}
+
 
 
 
@@ -87,6 +96,14 @@ form {
 }
 
 input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: #F1F1F1;
+}
+
+input[type="password"] {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
