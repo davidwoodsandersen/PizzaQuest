@@ -1,6 +1,28 @@
 Rails.application.routes.draw do
 
 
+#this will be removed, it's just part of the exercise
+  # get '/users/demo' => "users#demo"
+
+  namespace :api do
+      resources :visits, except: [:new, :edit]
+  end
+
+  get '/users/profile' => 'users#profile', as: :profile
+  get '/users/log_in' => 'users#log_in', as: :log_in
+  resources :users, only: [:new, :create]
+
+
+  post '/sessions' => 'sessions#create'
+  delete '/sessions' => 'sessions#destroy'
+
+  # resources :sessions, only: [:create, :destroy]
+                              #Log In   #Log out
+
+
+  get 'welcome/index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +30,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # post '/search' => 'welcome#search'
 
+
+  get '/map' => 'welcome#map'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
