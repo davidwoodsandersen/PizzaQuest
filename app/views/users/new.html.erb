@@ -1,9 +1,21 @@
-<h3>Be a new user</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-centered">
+      <div class="class-with-space white extra-bottom">
 
-<%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit %>
-<% end %>
+        <h3>Make an account</h3>
+
+        <%= form_for @user do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+            <%= f.label :image_link %>
+            <%= f.text_field :image %>
+            <%= f.submit %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

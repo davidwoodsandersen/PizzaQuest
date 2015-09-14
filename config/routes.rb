@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 #this will be removed, it's just part of the exercise
   # get '/users/demo' => "users#demo"
 
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
       resources :visits, except: [:new, :edit]
   end
 
+
+  get '/users/dashboard' => 'users#dashboard', as: :dashboard
   get '/users/profile' => 'users#profile', as: :profile
   get '/users/log_in' => 'users#log_in', as: :log_in
   resources :users, only: [:new, :create]
@@ -21,11 +24,13 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  # post '/search' => 'welcome#search'
 
 
   get '/map' => 'welcome#map'

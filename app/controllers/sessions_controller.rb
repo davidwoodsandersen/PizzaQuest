@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         user = User.find_by({username: username})
         if user && user.authenticate(password)
             session[:user_id] = user.id
-            redirect_to profile_path
+            redirect_to dashboard_path
         else
             redirect_to log_in_path
         end
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
         session[:user_id] = nil
         redirect_to log_in_path
     end
-    
+
 
 
 end
