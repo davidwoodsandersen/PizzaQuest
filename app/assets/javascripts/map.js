@@ -19,12 +19,12 @@ $(document).ready(function(){
   var acOptions = {
     types: ['establishment']
   };
-  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
-  autocomplete.bindTo('bounds',map);
-  var infoWindow = new google.maps.InfoWindow();
-  var marker = new google.maps.Marker({
-    map: map
-  });
+  // var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
+  // autocomplete.bindTo('bounds',map);
+  // var infoWindow = new google.maps.InfoWindow();
+  // var marker = new google.maps.Marker({
+  //   map: map
+  // });
   //
   // google.maps.event.addListener(autocomplete, 'place_changed', function() {
   //   infoWindow.close();
