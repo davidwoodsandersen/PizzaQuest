@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   def map
   end
 
-  def dashboard
-  end 
+  def leaderboard
+    @users = User.all
+  end
 end

@@ -20,18 +20,50 @@
 
 
 
-<h3>welcome back <%= @user.username %></h3>
+<!-- <h3>welcome back <%= @user.username %></h3> -->
+
+<!-- # <%= button_to "Log Out", '/sessions', method: :delete %> -->
 
 
-<%= button_to "Log Out", '/sessions', method: :delete %>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="class-with-space">
 
-<form class="new-visit" action="/api/visits" method="post">
-    <input type="text" name="visit[review]" placeholder="...review">
-    <input type="submit" name="review" value="New Visit Review">
-</form>
+                        <% if @user.image.length == 0 %>
+
+                        <%= image_tag("noprof.png", :class => "profile-image") %>
 
 
+                        <% elsif @user.image %>
 
+                        <%= image_tag("#{@user.image}", :class => "profile-image") %>
+
+                        <% end %>
+
+                        <p class="profile-points">8374627 Points</p>
+                        <p class="profile-ranking">Current Ranking: #93</p>
+                        <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <h3>Add a review:</h3>
+                      <div class="extra-bottom">
+                        <form class="new-visit" action="/api/visits" method="post">
+                            <input type="text" name="visit[review]" placeholder="...review">
+                            <input type="submit" name="review" value="New Visit Review">
+                        </form>
+                      </div>
+                        <h3>Places I've been:</h3>
+                      <div class="block">
+                        <h4>Joe's Pizza</h4>
+                        <p>'Twas good.</p>
+                      </div>
+                      <div class="block">
+                        <h4>Tony's Pizza</h4>
+                        <p>Sickass garlic knots.</p>
+                      </div>
+                    </div>
+                </div>
 
 
 <ul class="visits">

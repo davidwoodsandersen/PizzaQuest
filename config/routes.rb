@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
 
   get '/map' => 'welcome#map'
+  get '/leaderboard' => 'welcome#leaderboard'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -13,13 +13,15 @@
                 <div class="row">
                     <div class="col-sm-6">
 
-                      <% if @user.image != nil %>
 
-                      <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
-
-                      <% else %>
+                      <% if @user.image.length == 0 %>
 
                       <%= image_tag("noprof.png", :class => "dashboard-image") %>
+
+
+                      <% elsif @user.image %>
+
+                      <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
 
                       <% end %>
 
@@ -43,9 +45,11 @@
 
                 <div class="row">
                   <div class="col-sm-8">
-                    <button id="refresh">Refresh</button>
-                    <button class="pick">Click me now!</button>
-                    <h3>Map</h3>
+                    <h3>
+                      Map
+                      <button class="map-button" id="refresh">Refresh</button>
+                      <button class="pick map-button">Click me now!</button>
+                    </h3>
                     <div class="map-container">
                       <div id="map"></div>
                     </div>
@@ -53,14 +57,15 @@
                   <div class="col-sm-4">
                     <h3>Add Visit</h3>
                     <form class="" action="index.html" method="post">
-                      <label>Select restaurant:</label>
-                      <select>
+                      <label>Restaurant:</label>
+                      <input id="restaurant-name" type="text" name="name">
+                      <!-- <select>
                         <option>Joe's Pizza</option>
                         <option>Tony's Pizza</option>
                         <option>Bob's Pizza</option>
-                      </select>
+                      </select> -->
                       <label>Write about your experience:</label>
-                      <textarea name="Text1" rows="10" placeholder="Test"></textarea>
+                      <textarea id="restaurant-id" name="Text1" rows="10" placeholder="Test"></textarea>
                       <input type="submit" value="Add Visit">
                     </form>
                   </div>
