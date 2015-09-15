@@ -242,6 +242,8 @@ textarea {
       }
 
       .map-button {
+        float: right;
+        margin-left: 4px;
         border: 1px solid #EB4D3D;
         padding: 4px;
         background-color: white;
