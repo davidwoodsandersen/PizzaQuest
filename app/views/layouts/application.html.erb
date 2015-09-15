@@ -22,7 +22,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src=""></script>
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag "styles" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -52,13 +52,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/">Leaderboard</a></li>
+            <li><a href="/leaderboard">Leaderboard</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <%if current_user%>
               <li><a href="/users/profile">Profile</a></li>
             <%end%>
+            <%= button_to "Log Out", '/sessions', method: :delete %>
 
             <li><a href="/users/log_in">Log In</a></li>
             <li><a href="/">Sign Out</a></li>

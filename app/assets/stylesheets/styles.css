@@ -34,7 +34,7 @@ body {
   background-repeat: no-repeat;
 }
 
-#map{
+/*#map{
   height: 200px;
   margin: 0;
 }
@@ -43,7 +43,7 @@ body {
   height: 500px;
   margin: 0;
   border: 8px solid #e3e3e3;
-}
+}*/
 
 .change-nav { /* Makes styling changes to navbar at the top of every page */
   background-color: #fafafa;
@@ -103,6 +103,15 @@ body {
         to top right,
         #f06d06, red
       );
+}
+
+.black {
+  background-color: #000000;
+  color: white;
+}
+
+.right-float {
+  float: right;
 }
 
 
@@ -241,6 +250,21 @@ textarea {
         border: 15px solid #e3e3e3;
       }
 
+      .map-button {
+        float: right;
+        margin-left: 4px;
+        border: 1px solid #EB4D3D;
+        padding: 4px;
+        background-color: white;
+        font-size: 14px;
+        color: #EB4D3D;
+      }
+
+      .map-button:hover {
+        background-color: #EB4D3D;
+        color: white;
+      }
+
 
 
 
@@ -296,10 +320,10 @@ textarea {
       .leaderboard-title {
         margin: 0 0 1px 0;
         padding: 10px;
-        background-color: #cccccc;
-        font-size: 18px;
+        /*background-color: #cccccc;*/
+        font-size: 12px;
         color: white;
-        font-weight: bold;
+        font-family: 'Press Start 2P', cursive;
         text-shadow: 1px 1px 0px black;
         cursor: pointer;
       }
@@ -307,26 +331,60 @@ textarea {
       .leaderboard-box {
         box-sizing: border-box;
         margin: 1px 0 1px 0;
-        padding: 40px;
-        background-color: #FAFAFA;
+        background: url('pizzapattern.gif');
         text-align: center;
+      }
+
+      .leaderboard-screen {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 40px;
+      }
+
+      .leaderboard-rank {
+        color: gold;
       }
 
       .leaderboard-points {
         float: right;
-        font-size: 14px;
+        font-size: 12px;
+        font-family: 'Press Start 2P', cursive;
         color: gold;
-        font-weight: bold;
         text-shadow: 1px 1px 0px black;
       }
 
       .leaderboard-points-alt {
         font-weight: bold;
+        /*font-family: 'Press Start 2P', cursive;*/
       }
 
       .leaderboard-prof {
         width: 250px;
         height: 250px;
-        border: 8px solid #e3e3e3;
+        border: 10px solid white;
         border-radius: 50%;
       }
+
+      .leaderboard-name {
+        /*font-family: 'Press Start 2P', cursive;*/
+      }
+
+
+
+
+
+
+
+.visits {
+  list-style-type: none;
+  padding: 0;
+}
+
+.visits li {
+  list-style-type: none;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
