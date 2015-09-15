@@ -21,7 +21,7 @@
         <div class="col-sm-6">
           <div class="class-with-space white">
           <h3>Make an Account</h3>
-          <form class="" action="index.html" method="post">
+          <!-- <form class="" action="index.html" method="post">
             <label>Username:</label><br />
             <input type="text" name="name" placeholder="Username..."><br />
             <label>Email:</label><br />
@@ -31,7 +31,17 @@
             <label>Confirm Password:</label><br />
             <input type="text" name="name" placeholder="Password..."><br />
             <input type="submit" value="Sign Up">
-          </form>
+          </form> -->
+
+          <%= form_for @user do |f| %>
+              <%= f.label :username %>
+              <%= f.text_field :username %>
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+              <%= f.label :image_link %>
+              <%= f.text_field :image %>
+              <%= f.submit %>
+          <% end %>
           </div>
         </div>
       </div>
