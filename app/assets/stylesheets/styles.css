@@ -241,6 +241,19 @@ textarea {
         border: 15px solid #e3e3e3;
       }
 
+      .map-button {
+        border: 1px solid #EB4D3D;
+        padding: 4px;
+        background-color: white;
+        font-size: 14px;
+        color: #EB4D3D;
+      }
+
+      .map-button:hover {
+        background-color: #EB4D3D;
+        color: white;
+      }
+
 
 
 
