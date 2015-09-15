@@ -11,7 +11,7 @@ their quest to eat at the most pizza places in NYC.
 
 ##Dashboard page screenshot:
 
-![](/README_Images/PizzaQuest_dashboard.png)
+![](/README_Images/PizzaQuest_Dashboard.png)
 
 #Pizza-Quest - ERD
 
