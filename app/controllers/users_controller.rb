@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     def log_in
     end
 
+
     def show
       @user = User.find(params[:id])
       respond_to do |format|
@@ -44,6 +45,11 @@ class UsersController < ApplicationController
         format.json { render json: @user }
       end
     end
+
+    #update user profile info
+
+
+
 
 
     private
