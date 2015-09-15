@@ -37,6 +37,10 @@ class UsersController < ApplicationController
     def log_in
     end
 
+    #update user profile info
+
+
+
 
     private
 
