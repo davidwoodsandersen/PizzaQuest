@@ -1,23 +1,20 @@
-== README
-
-
-######Pizza Quest
+#PizzaQuest
 
 
 ###App Description:
 
-Pizza Quest app is a food locator app that lets users compare where they are on
+PizzaQuest is a food locator app that lets users compare where they are on
 their quest to eat at the most pizza places in NYC.
 
-##Dashboard page screenshot:
+###Dashboard Page Screenshot:
 
 ![](/README_Images/PizzaQuest_Dashboard.png)
 
-#Pizza-Quest - ERD
+###PizzaQuest - ERD
 
 https://docs.google.com/drawings/d/1YSWsV7mFOm6pfifrZGvxyEyrkBgM2SSA_jszAzJO9Ns/edit
 
-##Wireframes
+###Wireframes
 
 ![](/README_Images/PizzaQuest_Wireframe_MainPage.png)
 
@@ -25,17 +22,17 @@ https://docs.google.com/drawings/d/1YSWsV7mFOm6pfifrZGvxyEyrkBgM2SSA_jszAzJO9Ns/
 
 ![](/README_Images/PizzaQuest_Wireframe_ProfilePage.png)
 
-##Elevator Pitch:
+###Elevator Pitch:
 
 For people who like pizza and want to explore the world of pizza options in NYC.
-Pizza Quest is an app that helps users locate pizza places, review them
+PizzaQuest is an app that helps users locate pizza places, review them
 and show off how many places they’ve visited to the other users.
-Unlike other food locator apps, Pizza Quest gives users a sense of accomplishment
+Unlike other food locator apps, PizzaQuest gives users a sense of accomplishment
 as they work towards completing their quest of becoming
 the greatest pizza eater in the city.
 
 
-##HOW PIZZA QUEST APP WORKS
+###How PizzaQuest App Works
 
 Users sign up and begin their pizza quest in NYC. Once signed in, on their dashboard
 they get a list of all nearby pizza places. A user picks a pizza place,
@@ -47,7 +44,7 @@ points/gotten the farthest on their pizza quest.
 
 
 
-##User
+###User Stories
 -As a user I want to be able to add a new pizza place to my profile
 -As a user I want to track which pizza places I have been to
 -As a user I want to see my points accumulate as I eat at more places
@@ -56,7 +53,7 @@ points/gotten the farthest on their pizza quest.
 -As a user I want to see a list of my reviews
 
 
-##MVP
+###MVP
 -User Authentication functionality. Users can create a new visit, edit it, destroy it.
 Search for pizza places, display point value for pizza place,
 be able to add that pizza place to a user’s list of visited places.
