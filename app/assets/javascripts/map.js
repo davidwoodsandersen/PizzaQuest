@@ -8,6 +8,11 @@
 // -------------------------------------------------------
 
 $(document).ready(function(){
+  $('.pick').click(function(){
+       navigator.geolocation.getCurrentPosition(init);
+  });
+
+  $(document).on('click', '#testin', testing);
 
   var mapOptions = {
       center: new google.maps.LatLng(37.7833, -122.4167),
@@ -85,6 +90,7 @@ $(document).ready(function(){
           map: map,
           icon: 'http://a.deviantart.net/avatars/p/i/pizza-in-flames.gif?1',
           name: results[i].name,
+          id: results[i].id,
           rating: results[i].rating,
           vicinity: results[i].vicinity
         });
@@ -92,10 +98,11 @@ $(document).ready(function(){
 
         marker.addListener('click', function(){
           var contentString =
-            "<h3>" + this.name + "</h3>" +
+            "<h3 id=\"restname\">" + this.name + "</h3>" +
+            'id:'+ "<h5 id=\"restid\">" + this.id + "</h5>" +
             "<p> Rating: " + this.rating + "/5</p>" +
             "<i>" + this.vicinity + "</i></br></br>" +
-            "<a href='http://google.com'>'clickme'</a>";
+            "<button id=\"testin\" href='/users/dashboard'>'clickme'</button>";
 
           // Because the infowindow's content will point to the last result's name
           // the way is being built in the loop, we have to monkeypatch the
@@ -109,7 +116,14 @@ $(document).ready(function(){
         });
       }
     }
+    function testing (){
+      restname =  $('#restname').text()
+      restid = $('#restid').text()
+      console.log(restname)
 
+      $('#restaurant-id').text(restid);
+      $('#restaurant-name').val(restname);
+    };
 
 
 
@@ -177,12 +191,14 @@ $(document).ready(function(){
   // ---------------end of init----------
 
 
-$(document).ready(function(){
-  $('.pick').click(function(){
-    navigator.geolocation.getCurrentPosition(init);
-  });
 
-});
+
+// $(document).ready(function(){
+//   $('.pick').click(function(){
+//     navigator.geolocation.getCurrentPosition(init);
+//   });
+//
+// });
 
 
   // ------------------------------------------------------
