@@ -7,12 +7,37 @@
 // ------Alan's google maps js ---------------------------
 // -------------------------------------------------------
 
+
 $(document).ready(function(){
+
+  var apiToken = $('#api-token').val();
+  $.ajaxSetup({
+      headers: {
+          "token": apiToken
+      }
+  });
+  console.log(apiToken)
+
+
   $('.pick').click(function(){
        navigator.geolocation.getCurrentPosition(init);
   });
 
   $(document).on('click', '#testin', testing);
+
+  $("#submit-visit").click(function(){
+      $.post("/api/visits",
+      {
+          review: $("#restaurant-id").text()
+          // restaurant-id: "Duckburg",
+          // review:
+      },
+      function(data, status){
+          alert("Data: " + data + "\nStatus: " + status);
+      });
+  });
+
+
 
   var mapOptions = {
       center: new google.maps.LatLng(37.7833, -122.4167),

@@ -1,7 +1,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
 <%= javascript_include_tag 'map', 'data-turbolinks-track' => true %>
 <%= stylesheet_link_tag  'map', media: 'all', 'data-turbolinks-track' => true %>
-
+<input type="hidden" id="api-token" value="<%= @user.token %>">
 <div class="container">
 
 
@@ -64,7 +64,7 @@
                       </select> -->
                       <label>Write about your experience:</label>
                       <textarea id="restaurant-id" name="Text1" rows="10" placeholder="Test"></textarea>
-                      <input type="submit" value="Add Visit">
+                      <input id='submit-visit' type="button" value="Add Visit">
                     </form>
                   </div>
                 </div>
