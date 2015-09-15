@@ -14,6 +14,7 @@ Contents:
       4a. Homepage
       4b. Dashboard page
       4c. Profile page
+      4d. Leaderboard
 
 */
 
@@ -94,6 +95,14 @@ body {
 
 .extra-bottom { /* Adds extra space to the bottom of a div/element */
   padding-bottom: 70px;
+}
+
+.gradient { /* Adds gradient to the background of a div */
+  background-image:
+      linear-gradient(
+        to top right,
+        #f06d06, red
+      );
 }
 
 
@@ -268,4 +277,56 @@ textarea {
       .profile-bio {
         font-size: 14px;
         color: #888888;
+      }
+
+
+
+
+      /* 4d. Leaderboard */
+
+      .leaderboard-heading {
+        text-align: center;
+        font-size: 60px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #222222;
+        text-shadow: 4px 4px 0px #e3e3e3;
+      }
+
+      .leaderboard-title {
+        margin: 0 0 1px 0;
+        padding: 10px;
+        background-color: #cccccc;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px black;
+        cursor: pointer;
+      }
+
+      .leaderboard-box {
+        box-sizing: border-box;
+        margin: 1px 0 1px 0;
+        padding: 40px;
+        background-color: #FAFAFA;
+        text-align: center;
+      }
+
+      .leaderboard-points {
+        float: right;
+        font-size: 14px;
+        color: gold;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px black;
+      }
+
+      .leaderboard-points-alt {
+        font-weight: bold;
+      }
+
+      .leaderboard-prof {
+        width: 250px;
+        height: 250px;
+        border: 8px solid #e3e3e3;
+        border-radius: 50%;
       }
