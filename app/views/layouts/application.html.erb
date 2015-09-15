@@ -31,11 +31,6 @@
   <%= csrf_meta_tags %>
 
 
-  <script>
-      $(document).on('ready', function(){
-          $("#accordion").accordion();
-      });
-  </script>
 </head>
 <body>
 
@@ -61,6 +56,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <%if current_user%>
+              <li><a href="/users/dashboard">Dashboard</a></li>
               <li><a href="/users/profile">Profile</a></li>
               <li><%= link_to "Log Out", '/sessions', method: :delete %></li>
 
