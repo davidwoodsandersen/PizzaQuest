@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/dashboard' => 'users#dashboard', as: :dashboard
   get '/users/profile' => 'users#profile', as: :profile
   get '/users/log_in' => 'users#log_in', as: :log_in
+  get '/users/new' => 'users#new'
   get '/users/:id' => 'users#show'
   resources :users, only: [:new, :create]
 
