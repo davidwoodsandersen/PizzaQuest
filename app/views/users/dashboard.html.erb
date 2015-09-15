@@ -1,11 +1,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
 <%= javascript_include_tag 'map', 'data-turbolinks-track' => true %>
-
-<!-- adding in Alan's ajax page  -->
-<%= javascript_include_tag 'ajax_for_visits', 'data-turbolinks-track' => true %>
-
 <%= stylesheet_link_tag  'map', media: 'all', 'data-turbolinks-track' => true %>
-
+<input type="hidden" id="api-token" value="<%= @user.token %>">
 <div class="container">
 
 
@@ -49,11 +45,9 @@
 
                 <div class="row">
                   <div class="col-sm-8">
-                    <h3>
-                      Map
-                      <button class="map-button" id="refresh">Refresh</button>
-                      <button class="pick map-button">Click me now!</button>
-                    </h3>
+                    <button id="refresh">Refresh</button>
+                    <button class="pick">Click me now!</button>
+                    <h3>Map</h3>
                     <div class="map-container">
                       <div id="map"></div>
                     </div>
@@ -61,18 +55,37 @@
                   <div class="col-sm-4">
                     <h3>Add Visit</h3>
 
-                    <form class="" action="/api/visits" method="post">
+
+
+                    <!-- <form class="new-visit" action="/api/visits" method="post">
                       <label>Restaurant:</label>
-                      <input id="restaurant-name" type="text" name="name">
+                        <input id="restaurant-name" type="text" name="visit[name]"> -->
+
+
+
                       <!-- <select>
                         <option>Joe's Pizza</option>
                         <option>Tony's Pizza</option>
                         <option>Bob's Pizza</option>
                       </select> -->
                       <label>Write about your experience:</label>
-                      <textarea id="restaurant-id" name="Text1" rows="10" placeholder="Test"></textarea>
-                      <input type="submit" value="Add Visit" id="visit-submit">
+                      <!-- <textarea id="restaurant-id" name="visit[review]" rows="10" placeholder="Test"></textarea> -->
+
+<!--
+                      <input type="text" name="visit[review]" placeholder="...review">
+
+                      <input id="submit-visit" type="button" value="Add Visit" name="visit">
+                    </form> -->
+
+                    <form class="new-visit" action="/api/visits" method="post">
+                      <input id="restaurant-name" type="text" name="visit[review]" placeholder="...review">
+
+                      <input id="restaurant-id" type="text" name="visit[id]" placeholder="...id"></input>
+                        <!-- <input type="text" name="visit[review]" placeholder="...review"> -->
+                        <input id="submit" type="submit" name="review" value="New Visit Review">
                     </form>
+
+
                   </div>
                 </div>
 

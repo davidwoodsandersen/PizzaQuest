@@ -303,6 +303,11 @@ textarea {
         color: #888888;
       }
 
+      .profile-places {
+        height: 372px;
+        overflow: scroll;
+      }
+
 
 
 
@@ -387,4 +392,8 @@ textarea {
   margin-bottom: 20px;
   border: 1px solid #cccccc;
   border-radius: 4px;
+}
+
+.visits button {
+  float: right;
 }
