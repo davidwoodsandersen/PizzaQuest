@@ -1,5 +1,9 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
 <%= javascript_include_tag 'map', 'data-turbolinks-track' => true %>
+
+<!-- adding in Alan's ajax page  -->
+<%= javascript_include_tag 'ajax_for_visits', 'data-turbolinks-track' => true %>
+
 <%= stylesheet_link_tag  'map', media: 'all', 'data-turbolinks-track' => true %>
 
 <div class="container">
@@ -56,7 +60,8 @@
                   </div>
                   <div class="col-sm-4">
                     <h3>Add Visit</h3>
-                    <form class="" action="index.html" method="post">
+
+                    <form class="" action="/api/visits" method="post">
                       <label>Restaurant:</label>
                       <input id="restaurant-name" type="text" name="name">
                       <!-- <select>
@@ -66,7 +71,7 @@
                       </select> -->
                       <label>Write about your experience:</label>
                       <textarea id="restaurant-id" name="Text1" rows="10" placeholder="Test"></textarea>
-                      <input type="submit" value="Add Visit">
+                      <input type="submit" value="Add Visit" id="visit-submit">
                     </form>
                   </div>
                 </div>

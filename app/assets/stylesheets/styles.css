@@ -34,7 +34,7 @@ body {
   background-repeat: no-repeat;
 }
 
-#map{
+/*#map{
   height: 200px;
   margin: 0;
 }
@@ -43,7 +43,7 @@ body {
   height: 500px;
   margin: 0;
   border: 8px solid #e3e3e3;
-}
+}*/
 
 .change-nav { /* Makes styling changes to navbar at the top of every page */
   background-color: #fafafa;
