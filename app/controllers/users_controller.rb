@@ -30,7 +30,6 @@ class UsersController < ApplicationController
     def profile
         authenticate!
         @user = current_user
-
     end
 
     # get '/users/log_in' => 'users#log_in', as: :log_in
