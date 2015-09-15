@@ -13,7 +13,7 @@ class Api::VisitsController < ApplicationController
 
  #           POST   /api/visits(.:format)     api/visits#create
  def create
-   binding.pry
+
     user = User.find_by({token: env['HTTP_TOKEN']})
     visit = user.visits.create(visit_params)
      render json: visit
