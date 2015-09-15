@@ -32,7 +32,7 @@
                     <div class="col-sm-8">
                       <div class="class-with-space">
 
-                        <% if @user.image.length == 0 %>
+                        <% if @user.image == nil || @user.image.length == 0 %>
 
                         <%= image_tag("noprof.png", :class => "profile-image") %>
 
@@ -46,16 +46,24 @@
                         <p class="profile-points">8374627 Points</p>
                         <p class="profile-ranking">Current Ranking: #93</p>
                         <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
+                      </div><br />
+                      <div class="class-with-space">
+
+                        <h3>Add a review:</h3>
+                        <div class="extra-bottom">
+                          <form class="new-visit" action="/api/visits" method="post">
+                              <input type="text" name="visit[review]" placeholder="...review">
+                              <input type="submit" name="review" value="New Visit Review">
+                          </form>
+                        </div>
+
+                        <ul class="visits">
+
+                        </ul>
+
                       </div>
                     </div>
                     <div class="col-sm-4">
-                      <!-- <h3>Add a review:</h3>
-                      <div class="extra-bottom">
-                        <form class="new-visit" action="/api/visits" method="post">
-                            <input type="text" name="visit[review]" placeholder="...review">
-                            <input type="submit" name="review" value="New Visit Review">
-                        </form>
-                      </div> -->
                         <h3>Places I've been:</h3>
                       <div class="block">
                         <h4>Joe's Pizza</h4>
@@ -67,11 +75,6 @@
                       </div>
                     </div>
                 </div>
-
-
-<ul class="visits">
-
-</ul>
 
 
 

@@ -340,6 +340,10 @@ textarea {
         padding: 40px;
       }
 
+      .leaderboard-rank {
+        color: gold;
+      }
+
       .leaderboard-points {
         float: right;
         font-size: 12px;
@@ -363,3 +367,24 @@ textarea {
       .leaderboard-name {
         /*font-family: 'Press Start 2P', cursive;*/
       }
+
+
+
+
+
+
+
+.visits {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.visits li {
+  list-style-type: none;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
