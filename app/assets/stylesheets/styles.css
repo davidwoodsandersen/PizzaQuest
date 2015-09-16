@@ -453,18 +453,18 @@ textarea {
   z-index: 1;
 }
 
-.modal-inner {
+/*.modal-inner {
   width: 400px;
   height: 350px;
-  background: url(<%= randomized_background_image %>) no-repeat center center fixed;
-}
+  background: url('gif2.gif');
+}*/
 
 .modal-inner h3 {
-  top: 40px;
-  color: white;
-  text-shadow: 0px 0px 10px #000000;
+  color: black;
+  /*text-shadow: 0px 0px 10px #000000;*/
+  text-align: center;
 }
 
-/*.dashboard-modal {
+.dashboard-modal {
   width: 100%
-}*/
+}
