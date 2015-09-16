@@ -40,8 +40,7 @@
                         <%= image_tag("#{@user.image}", :class => "profile-image") %>
 
                         <% end %>
-
-                        <p class="profile-points">8374627 Points</p>
+                        <p class="profile-points"><%= @user.visits.length * 100 %></p>
                         <p class="profile-ranking">Current Ranking: #93</p>
                         <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
                       </div>
