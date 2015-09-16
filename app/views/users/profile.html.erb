@@ -65,33 +65,16 @@
                     <div class="col-sm-4">
                       <h3>Places I've been:</h3>
                       <div class="profile-places">
+
+                        <% @user.visits.each do | visit | %>
+
                           <div class="block">
-                            <h4>Joe's Pizza</h4>
-                            <p>'Twas good.</p>
+                            <h4> <%= visit.restaurant_name %> </h4>
+                            <p> <%= visit.review %> </p>
                           </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
+
+                        <% end %>
+
                           </div>
                       </div>
                       <hr />
