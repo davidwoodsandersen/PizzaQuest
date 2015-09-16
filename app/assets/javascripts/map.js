@@ -42,7 +42,7 @@ $(document).ready(function(){
         $("#restaurant-review").val("")
         $("#restaurant-name").val("")
         $("#restaurant-id").val("")
-        alert("Data: " + data + "\nStatus: " + status);
+        $("#modal").toggle();
       });
   });
 
@@ -86,6 +86,18 @@ $(document).ready(function(){
 
 
 
+
+  // Add an event to OPEN the modal
+  $("#open-modal").on("click", function() {
+    console.log("You clicked the open button!");
+    $("#modal").toggle();
+  });
+
+  // Add an event to CLOSE the modal
+  $("#close-modal").on("click", function() {
+    console.log("You clicked the close button.");
+    $("#modal").toggle();
+  });
 
 
 

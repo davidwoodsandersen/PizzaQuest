@@ -315,8 +315,9 @@ textarea {
 
       .leaderboard-heading {
         text-align: center;
-        font-size: 60px;
+        font-size: 40px;
         font-weight: bold;
+        font-family: 'Press Start 2P', cursive;
         text-transform: uppercase;
         color: #222222;
         text-shadow: 4px 4px 0px #e3e3e3;
@@ -341,8 +342,10 @@ textarea {
       }
 
       .leaderboard-screen {
+        box-sizing: border-box;
         background-color: rgba(255, 255, 255, 0.8);
         padding: 40px;
+        height: 100%;
       }
 
       .leaderboard-rank {
@@ -396,4 +399,74 @@ textarea {
 
 .visits button {
   float: right;
+}
+
+
+
+
+
+
+
+
+
+#modal {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+#close-modal {
+  position: absolute;
+  left: 96%;
+  z-index: 2;
+  font-size: 1.5em;
+  border-radius: 50%;
+  border: 3px solid white;
+  height: 1em;
+  width: 1em;
+  text-align: center;
+  background-color: black;
+  line-height: 1;
+  color: white;
+}
+
+#close-modal:hover {
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  margin: 0 30%;
+  background-color: white;
+  top: 10%;
+  width: 40%;
+}
+
+.modal-body {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  background-color: white;
+  border: 10px solid white;
+  z-index: 1;
+}
+
+/*.modal-inner {
+  width: 400px;
+  height: 350px;
+  background: url('gif2.gif');
+}*/
+
+.modal-inner h3 {
+  color: black;
+  /*text-shadow: 0px 0px 10px #000000;*/
+  text-align: center;
+}
+
+.dashboard-modal {
+  width: 100%
 }
