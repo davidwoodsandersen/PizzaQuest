@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   get '/users/dashboard' => 'users#dashboard', as: :dashboard
   get '/users/profile' => 'users#profile', as: :profile
-  get '/users/log_in' => 'users#log_in', as: :log_int
-  resources :users, only: [:new, :create]
+  get '/users/log_in' => 'users#log_in', as: :log_in
+  resources :users, only: [:new, :create, :show]
 
 
   post '/sessions' => 'sessions#create'
