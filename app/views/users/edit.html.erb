@@ -1,0 +1,24 @@
+<h3>Hi <%= @user.username %>, edit your profile information</h3>
+
+
+<%= form_for @user do |f| %>
+    <%= f.label :tagline %>
+    <%= f.text_field :tagline %>
+    <%= f.submit %>
+    <% end %>
+
+
+    <%= button_to "Edit Tagline", edit_user(@user), method: :get %>
+
+
+
+
+<ul>
+
+    <li>
+        <%= image_tag("#{@user.image}", :class => "profile-image") %>
+        <%= @user.tagline %>
+    </li>
+
+
+</ul>
