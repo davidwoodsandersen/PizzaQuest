@@ -315,8 +315,9 @@ textarea {
 
       .leaderboard-heading {
         text-align: center;
-        font-size: 60px;
+        font-size: 40px;
         font-weight: bold;
+        font-family: 'Press Start 2P', cursive;
         text-transform: uppercase;
         color: #222222;
         text-shadow: 4px 4px 0px #e3e3e3;
@@ -426,7 +427,7 @@ textarea {
   height: 1em;
   width: 1em;
   text-align: center;
-  background-color: limegreen;
+  background-color: black;
   line-height: 1;
   color: white;
 }
@@ -452,6 +453,18 @@ textarea {
   z-index: 1;
 }
 
-.dashboard-modal {
-  width: 100%
+.modal-inner {
+  width: 400px;
+  height: 350px;
+  background: url(<%= randomized_background_image %>) no-repeat center center fixed;
 }
+
+.modal-inner h3 {
+  top: 40px;
+  color: white;
+  text-shadow: 0px 0px 10px #000000;
+}
+
+/*.dashboard-modal {
+  width: 100%
+}*/

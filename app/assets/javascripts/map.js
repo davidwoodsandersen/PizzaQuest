@@ -42,7 +42,7 @@ $(document).ready(function(){
         $("#restaurant-review").val("")
         $("#restaurant-name").val("")
         $("#restaurant-id").val("")
-        alert("Data: " + data + "\nStatus: " + status);
+        $("#modal").toggle();
       });
   });
 
