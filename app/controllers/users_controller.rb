@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
 
     def show
+      @users = User.all
       @user = User.find(params[:id])
       respond_to do |format|
         format.html # show.html.erb
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
         authenticate!
         @user = current_user
         @user_points = @user.visits.length * 100
-
+        @users = User.all
     end
 
     # get '/users/profile' => 'users#profile', as: :profile
@@ -42,6 +43,7 @@ class UsersController < ApplicationController
         authenticate!
         @user = current_user
         @user_points = @user.visits.length * 100
+        @users = User.all
     end
 
     # get '/users/log_in' => 'users#log_in', as: :log_in

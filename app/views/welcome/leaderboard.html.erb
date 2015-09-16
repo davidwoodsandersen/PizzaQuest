@@ -15,7 +15,6 @@
                 <hr />
 
 
-
           <!-- Alan's ruby fun -->
 
           <% userArray = [] %>
@@ -31,13 +30,27 @@
 
           <% leaderBoardArray.each do |ohyes| %>
 
-          <h4 class="leaderboard-title gradient"><span class="leaderboard-rank">#1</span>  &nbsp; &nbsp;      <%= ohyes.username %> <span class="leaderboard-points"><%= ohyes.visits.length * 100 %></span>  </h4>
+          <% userArray = [] %>
+          <% @users.each do |x| %>
+          <% userArray.push(x) %>
+          <% end %>
+          <% myOwnArray = userArray.sort_by {|user| -user.visits.length} %>
+
+          <% selectedPersonScore = myOwnArray.index(ohyes) + 1%>
+          <% selectedPersonScore %>
+
+          <h4 class="leaderboard-title gradient"><span class="leaderboard-rank"><%=selectedPersonScore %></span>  &nbsp; &nbsp;      <%= ohyes.username %> <span class="leaderboard-points"><%= ohyes.visits.length * 100 %></span>  </h4>
           <div class="leaderboard-box">
             <div class="leaderboard-screen">
-                <img class="leaderboard-prof" src="http://cdn.financebuzz.io/images/2015/06/05/nicholascage.jpg">
+              <% if ohyes.image == "" %>
+              <%= image_tag("noprof.png", :class => "leaderboard-prof") %>
+              <% elsif ohyes.image %>
+              <%= image_tag("#{ohyes.image}", :class => "leaderboard-prof") %>
+              <% end %>
                 <h1 class="leaderboard-name"><%= ohyes.username %></h1>
                 <p class="leaderboard-points-alt"><%= ohyes.visits.length * 100 %></p>
                 <p class="leaderboard-bio"><%= ohyes.tagline %></p>
+                <p class="leaderboard-link"> <a href="/users/<%= ohyes.id %>">My profile</a> </p>
             </div>
           </div>
 
