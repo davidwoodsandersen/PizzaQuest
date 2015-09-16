@@ -97,7 +97,10 @@ $(document).ready(function(){
   $("#close-modal").on("click", function() {
     console.log("You clicked the close button.");
     $("#modal").toggle();
+    // location.reload();
   });
+
+
 
 
 
@@ -157,7 +160,7 @@ function grabRestInfo (){
         marker.addListener('click', function(){
           var contentString =
             "<h3 id=\"restname\">" + this.name + "</h3>" +
-            'id:'+ "<h5 id=\"restid\">" + this.id + "</h5>" +
+            "<h5 style=\"display: none\" id=\"restid\">" + this.id + "</h5>" +
             "<p> Rating: " + this.rating + "/5</p>" +
             "<i>" + this.vicinity + "</i></br></br>" +
             "<button id=\"addFromMap\" href='/users/dashboard'>'I Ate Here'</button>";

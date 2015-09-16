@@ -25,8 +25,6 @@
 
 <!-- <h3>welcome back <%= @user.username %></h3> -->
 
-<!-- # <%= button_to "Log Out", '/sessions', method: :delete %> -->
-
 
                   <div class="row">
                     <div class="col-sm-8">
@@ -42,20 +40,35 @@
                         <%= image_tag("#{@user.image}", :class => "profile-image") %>
 
                         <% end %>
+                        <p class="profile-points"><%= @user_points %></p>
 
-                        <p class="profile-points">8374627 Points</p>
-                        <p class="profile-ranking">Current Ranking: #93</p>
+
+
+                        <% userArray = [] %>
+                        <% @users.each do |x| %>
+                        <% userArray.push(x) %>
+                        <% end %>
+                        <% leaderBoardArray = userArray.sort_by {|user| -user.visits.length} %>
+
+                        <% selectedPersonScore = leaderBoardArray.index(@user) + 1%>
+                        <% selectedPersonScore %>
+
+
+                        <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
                         <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
+
+                        <p class="profile-ranking">Current Ranking: #93</p>
+                        <p class="profile-bio"> <%= @user.tagline %> </p>
                       </div>
                       <div class="class-with-space">
 
-                        <h3>Add a review:</h3>
+                        <!-- <h3>Add a review:</h3>
                         <div class="extra-bottom">
                           <form class="new-visit" action="/api/visits" method="post">
                               <input type="text" name="visit[review]" placeholder="...review">
                               <input type="submit" name="review" value="New Visit Review">
                           </form>
-                        </div>
+                        </div> -->
 
                         <hr />
 
@@ -63,38 +76,21 @@
 
                         </ul>
 
-                      </div>
+                    </div>
                     </div>
                     <div class="col-sm-4">
                       <h3>Places I've been:</h3>
                       <div class="profile-places">
+
+                        <% @user.visits.each do | visit | %>
+
                           <div class="block">
-                            <h4>Joe's Pizza</h4>
-                            <p>'Twas good.</p>
+                            <h4> <%= visit.restaurant_name %> </h4>
+                            <p> <%= visit.review %> </p>
                           </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
-                          </div>
-                          <div class="block">
-                            <h4>Tony's Pizza</h4>
-                            <p>Sickass garlic knots.</p>
+
+                        <% end %>
+
                           </div>
                       </div>
                       <hr />

@@ -15,9 +15,21 @@
                       <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
                       <% end %>
 
+
+
                       <h1 class="dashboard-username"> <%= @user.username %> </h1>
                       <p class="dashboard-total"><%= @user_points %></p>
-                      <p class="dashboard-rank">Current Ranking: #93</p>
+
+                      <% userArray = [] %>
+                      <% @users.each do |x| %>
+                      <% userArray.push(x) %>
+                      <% end %>
+                      <% leaderBoardArray = userArray.sort_by {|user| -user.visits.length} %>
+
+                      <% selectedPersonScore = leaderBoardArray.index(@user) + 1%>
+                      <% selectedPersonScore %>
+
+                      <p class="dashboard-rank">Current Ranking: <%= selectedPersonScore %></p>
                     </div>
 
                     <div class="col-sm-6">
@@ -53,10 +65,13 @@
                       <div class="modal-content">
                         <span id="close-modal">X</span>
                         <div class="modal-body">
-                          <!-- <%= image_tag("catpizza.gif", :class => "dashboard-modal") %> -->
+
                           <div class="modal-inner">
-                            <%= image_tag("gif2.gif", :class => "dashboard-modal") %>
-                            <h3>Your visit has been logged!</h3>
+
+                            <h3 class="modal-header">Your visit has been logged!</h3>
+
+                  
+
                           </div>
                         </div>
                       </div>
