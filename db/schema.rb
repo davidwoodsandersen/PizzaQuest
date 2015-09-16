@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150915190605) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "token"
-    t.integer  "points_total"
     t.string   "tagline"
+    t.integer  "points_total"
   end
 
   create_table "visits", force: :cascade do |t|
