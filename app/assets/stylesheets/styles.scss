@@ -456,12 +456,13 @@ textarea {
 .modal-inner {
   width: 400px;
   height: 350px;
-  background: url(<%= randomized_background_image %>) no-repeat center center fixed;
+  background: url(gif1.gif) no-repeat center center fixed;
 }
 
 .modal-inner h3 {
   top: 40px;
   color: white;
+  text-align: center;
   text-shadow: 0px 0px 10px #000000;
 }
 
