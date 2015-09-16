@@ -1,5 +1,5 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
-
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 <div class="container">
 
@@ -15,10 +15,45 @@
                 <hr />
 
 
-                <h4 class="leaderboard-title black">Rank &nbsp; Name <span class="right-float">Points</span> </h4>
-                <div id="accordion">
 
-                  <h4 class="leaderboard-title gradient"><span class="leaderboard-rank">#1</span>  &nbsp; &nbsp;   Nicholas123 <span class="leaderboard-points">234432</span>  </h4>
+          <!-- Alan's ruby fun -->
+
+          <% userArray = [] %>
+          <% @users.each do |x| %>
+          <% userArray.push(x) %>
+          <% end %>
+          <% leaderBoardArray = userArray.sort_by {|user| -user.visits.length} %>
+
+
+
+          <h4 class="leaderboard-title black">Rank &nbsp; Name <span class="right-float">Points</span> </h4>
+          <div id="accordion">
+
+          <% leaderBoardArray.each do |ohyes| %>
+
+          <h4 class="leaderboard-title gradient"><span class="leaderboard-rank">#1</span>  &nbsp; &nbsp;      <%= ohyes.username %> <span class="leaderboard-points"><%= ohyes.visits.length * 100 %></span>  </h4>
+          <div class="leaderboard-box">
+            <div class="leaderboard-screen">
+                <img class="leaderboard-prof" src="http://cdn.financebuzz.io/images/2015/06/05/nicholascage.jpg">
+                <h1 class="leaderboard-name"><%= ohyes.username %></h1>
+                <p class="leaderboard-points-alt"><%= ohyes.visits.length * 100 %></p>
+                <p class="leaderboard-bio"><%= ohyes.tagline %></p>
+            </div>
+          </div>
+
+
+
+
+                    <% end %>
+
+          <!-- end of Alan's ruby fun -->
+
+
+
+
+
+
+                  <!-- <h4 class="leaderboard-title gradient"><span class="leaderboard-rank">#1</span>  &nbsp; &nbsp;   Nicholas123 <span class="leaderboard-points">234432</span>  </h4>
                   <div class="leaderboard-box">
                     <div class="leaderboard-screen">
                         <img class="leaderboard-prof" src="http://cdn.financebuzz.io/images/2015/06/05/nicholascage.jpg">
@@ -26,9 +61,9 @@
                         <p class="leaderboard-points-alt">234432 Points</p>
                         <p class="leaderboard-bio">This is my hip bio. I love pizza. Pizza pizza pizza.</p>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <h4 class="leaderboard-title gradient"><span class="leaderboard-rank">#2</span> &nbsp; &nbsp; Alan Rice   <span class="leaderboard-points">458432</span>  </h4>
+                  <!-- <h4 class="leaderboard-title gradient"><span class="leaderboard-rank">#2</span> &nbsp; &nbsp; Alan Rice   <span class="leaderboard-points">458432</span>  </h4>
                   <div class="leaderboard-box">
                     <div class="leaderboard-screen">
                       <img class="leaderboard-prof" src="http://cdn.financebuzz.io/images/2015/06/05/nicholascage.jpg">
@@ -56,11 +91,13 @@
                       <p class="leaderboard-points-alt">234432 Points</p>
                       <p class="leaderboard-bio">This is my hip bio. I love pizza. Pizza pizza pizza.</p>
                     </div>
-                  </div>
+                  </div> -->
 
-                </div>
+                </div><!-- end of accordion -->
 
-              </div>
+              </div><!-- end -->
+x
+
           </div>
         </div>
 
