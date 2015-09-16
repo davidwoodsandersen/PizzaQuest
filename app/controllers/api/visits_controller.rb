@@ -13,9 +13,12 @@ class Api::VisitsController < ApplicationController
 
  #           POST   /api/visits(.:format)     api/visits#create
  def create
-      user = User.find_by({token: env['HTTP_TOKEN']})
+<<<<<<< HEAD
 
-     visit = user.visits.create(visit_params)
+=======
+>>>>>>> 67aa3da77c6202306577c687b0bc483f7f57353b
+    user = User.find_by({token: env['HTTP_TOKEN']})
+    visit = user.visits.create(visit_params)
      render json: visit
  end
 
@@ -50,7 +53,7 @@ class Api::VisitsController < ApplicationController
  private
 
  def visit_params
-     params.require(:visit).permit(:review)
+     params.require(:visit).permit(:review, :id)
  end
 
 end
