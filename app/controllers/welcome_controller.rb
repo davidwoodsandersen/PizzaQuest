@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
   # ...
+
+  include SessionsHelper
+
   def index
     @user = User.new
   end
@@ -9,5 +12,6 @@ class WelcomeController < ApplicationController
 
   def leaderboard
     @users = User.all
+    @user = current_user
   end
 end
