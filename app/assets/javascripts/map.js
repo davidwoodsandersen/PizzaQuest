@@ -23,21 +23,26 @@ $(document).ready(function(){
        navigator.geolocation.getCurrentPosition(init);
   });
 
-  $(document).on('click', '#testin', testing);
+  $(document).on('click', '#addFromMap', grabRestInfo);
 
+//makes an ajax post to visits api when clicking add visit button from dashboard
   $("#submit-visit").click(function(){
       $.post("/api/visits",
         {
           visit: {
+
           review: $("#restaurant-review").val(),
           restaurant_name: $("#restaurant-name").val(),
           restaurant_id: $("#restaurant-id").val()
           }
-          // restaurant-id: "Duckburg",
-          // review:
+
       },
+      //upon successful post, clear the values from fields
       function(data, status){
-          alert("Data: " + data + "\nStatus: " + status);
+        $("#restaurant-review").val("")
+        $("#restaurant-name").val("")
+        $("#restaurant-id").val("")
+        alert("Data: " + data + "\nStatus: " + status);
       });
   });
 
@@ -86,7 +91,7 @@ $(document).ready(function(){
 
 });
 
-function testing (){
+function grabRestInfo (){
   restname =  $('#restname').text()
   restid = $('#restid').text()
   console.log(restname)
@@ -143,7 +148,7 @@ function testing (){
             'id:'+ "<h5 id=\"restid\">" + this.id + "</h5>" +
             "<p> Rating: " + this.rating + "/5</p>" +
             "<i>" + this.vicinity + "</i></br></br>" +
-            "<button id=\"testin\" href='/users/dashboard'>'clickme'</button>";
+            "<button id=\"addFromMap\" href='/users/dashboard'>'I Ate Here'</button>";
 
           // Because the infowindow's content will point to the last result's name
           // the way is being built in the loop, we have to monkeypatch the

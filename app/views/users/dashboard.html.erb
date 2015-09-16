@@ -3,28 +3,17 @@
 <%= stylesheet_link_tag  'map', media: 'all', 'data-turbolinks-track' => true %>
 <input type="hidden" id="api-token" value="<%= @user.token %>">
 <div class="container">
-
-
         <div class="row">
           <div class="col-sm-12">
               <div class="class-with-space white">
-
-
                 <div class="row">
                     <div class="col-sm-6">
 
-
                       <% if @user.image.length == 0 %>
-
                       <%= image_tag("noprof.png", :class => "dashboard-image") %>
-
-
                       <% elsif @user.image %>
-
                       <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
-
                       <% end %>
-
 
                       <h1 class="dashboard-username"> <%= @user.username %> </h1>
                       <p class="dashboard-total">8374627 Points</p>
@@ -32,21 +21,14 @@
                     </div>
 
                     <div class="col-sm-6">
-
                       <h1 class="dashboard-welcome">Welcome back, <%= @user.username %></h1>
-
                     </div>
-
                 </div>
-
-
-                <hr />
-
 
                 <div class="row">
                   <div class="col-sm-8">
-                    <button id="refresh">Refresh</button>
-                    <button class="pick">Click me now!</button>
+                    <button id="refresh">More pizza!</button>
+                    <button class="pick">Find pizza near me!</button>
                     <h3>Map</h3>
                     <div class="map-container">
                       <div id="map"></div>
@@ -54,14 +36,10 @@
                   </div>
                   <div class="col-sm-4">
                     <h3>Add Visit</h3>
-                    <form class="" action="index.html" method="post">
+                    <form>
                       <label>Restaurant:</label>
-                      <input id="restaurant-name" type="text" name="name">
-                      <!-- <select>
-                        <option>Joe's Pizza</option>
-                        <option>Tony's Pizza</option>
-                        <option>Bob's Pizza</option>
-                      </select> -->
+                      <input id="restaurant-name" type="text" name="name" readonly>
+
                       <label>Write about your experience:</label>
                       <textarea id="restaurant-review" name="Text1" rows="10" placeholder="Test"></textarea>
                       <input id="restaurant-id" type="hidden">
@@ -69,7 +47,6 @@
                     </form>
                   </div>
                 </div>
-
             </div>
           </div>
         </div>
