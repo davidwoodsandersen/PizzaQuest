@@ -39,9 +39,11 @@
 
                 <div class="row">
                   <div class="col-sm-8">
-                    <button id="refresh">More pizza!</button>
-                    <button class="pick">Find pizza near me!</button>
-                    <h3>Map</h3>
+                    <h3>
+                      Map
+                      <button id="refresh">More pizza!</button>
+                      <button class="pick">Find pizza near me!</button>
+                    </h3>
                     <div class="map-container">
                       <div id="map"></div>
                     </div>
@@ -65,10 +67,13 @@
                       <div class="modal-content">
                         <span id="close-modal">X</span>
                         <div class="modal-body">
-                          <!-- <%= image_tag("catpizza.gif", :class => "dashboard-modal") %> -->
+
                           <div class="modal-inner">
-                            <%= image_tag("gif2.gif", :class => "dashboard-modal") %>
-                            <h3>Your visit has been logged!</h3>
+
+                            <h3 class="modal-header">Your visit has been logged!</h3>
+
+
+
                           </div>
                         </div>
                       </div>

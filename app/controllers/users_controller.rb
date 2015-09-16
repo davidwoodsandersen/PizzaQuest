@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     def show
       @users = User.all
       @user = User.find(params[:id])
+      @user_points = @user.visits.length * 100
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @user }
@@ -50,7 +51,20 @@ class UsersController < ApplicationController
     def log_in
     end
 
-    #update user profile info
+
+    # edit_user GET    /users/:id/edit(.:format)  users#edit
+    def edit
+        @user = User.find(params[:id])
+    end
+
+    #           PATCH  /users/:id(.:format)       users#update
+    #           PUT    /users/:id(.:format)       users#update
+    def update
+        user = User.find(params[:id])
+        user.update(user_params)
+        redirect_to user_path(user)
+    end
+
 
 
 
