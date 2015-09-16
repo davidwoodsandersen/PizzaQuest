@@ -28,7 +28,7 @@
           <h4 class="leaderboard-title black">Rank &nbsp; Name <span class="right-float">Points</span> </h4>
           <div id="accordion">
 
-          <% leaderBoardArray.each do |ohyes| %>
+          <% leaderBoardArray.first(50).each do |ohyes| %>
 
           <% userArray = [] %>
           <% @users.each do |x| %>
