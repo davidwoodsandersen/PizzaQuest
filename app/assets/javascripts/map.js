@@ -27,8 +27,12 @@ $(document).ready(function(){
 
   $("#submit-visit").click(function(){
       $.post("/api/visits",
-      {
-          review: $("#restaurant-id").text()
+        {
+          visit: {
+          review: $("#restaurant-review").val(),
+          restaurant_name: $("#restaurant-name").val(),
+          restaurant_id: $("#restaurant-id").val()
+          }
           // restaurant-id: "Duckburg",
           // review:
       },
@@ -81,6 +85,18 @@ $(document).ready(function(){
 
 
 });
+
+function testing (){
+  restname =  $('#restname').text()
+  restid = $('#restid').text()
+  console.log(restname)
+  console.log(restid)
+  console.log(restname)
+
+
+  $('#restaurant-id').val(restid);
+  $('#restaurant-name').val(restname);
+};
 
 //------ the "find my location" map function----------
 
@@ -141,14 +157,7 @@ $(document).ready(function(){
         });
       }
     }
-    function testing (){
-      restname =  $('#restname').text()
-      restid = $('#restid').text()
-      console.log(restname)
 
-      $('#restaurant-id').text(restid);
-      $('#restaurant-name').val(restname);
-    };
 
 
 
