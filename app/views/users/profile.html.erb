@@ -41,7 +41,19 @@
 
                         <% end %>
                         <p class="profile-points"><%= @user_points %></p>
-                        <p class="profile-ranking">Current Ranking: #93</p>
+
+
+                        <% userArray = [] %>
+                        <% @users.each do |x| %>
+                        <% userArray.push(x) %>
+                        <% end %>
+                        <% leaderBoardArray = userArray.sort_by {|user| -user.visits.length} %>
+
+                        <% selectedPersonScore = leaderBoardArray.index(@user) + 1%>
+                        <% selectedPersonScore %>
+
+
+                        <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
                         <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
                       </div>
                       <div class="class-with-space">
