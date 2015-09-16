@@ -15,7 +15,6 @@
                 <hr />
 
 
-
           <!-- Alan's ruby fun -->
 
           <% userArray = [] %>
@@ -43,7 +42,7 @@
           <h4 class="leaderboard-title gradient"><span class="leaderboard-rank"><%=selectedPersonScore %></span>  &nbsp; &nbsp;      <%= ohyes.username %> <span class="leaderboard-points"><%= ohyes.visits.length * 100 %></span>  </h4>
           <div class="leaderboard-box">
             <div class="leaderboard-screen">
-              <% if ohyes.image.length == 0 %>
+              <% if ohyes.image == "" %>
               <%= image_tag("noprof.png", :class => "leaderboard-prof") %>
               <% elsif ohyes.image %>
               <%= image_tag("#{ohyes.image}", :class => "leaderboard-prof") %>

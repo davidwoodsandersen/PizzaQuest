@@ -5,7 +5,22 @@
             <h3>Top Ten</h3>
             <p class="leaderboard-header">Name          <span class="points">Points</span></p>
             <ol>
-              <li>Eugene Bessette          <span class="points">234543</span></li>
+
+                    <!-- Alans leaderboard fun  -->
+                  <% userArray = [] %>
+                  <% @users.each do |x| %>
+                  <% userArray.push(x) %>
+                  <% end %>
+                  <% leaderBoardArray = userArray.sort_by {|user| -user.visits.length} %>
+                  <% leaderBoardArray.each do |x| %>
+                    <% userPoints = x.visits.length * 100 %>
+                    <li><%= x.username %><span class="points"><%= userPoints %> </span></li>
+
+                <%end %>
+
+                    <!-- end of alans leaderboard fun-->
+
+              <!-- <li>Eugene Bessette          <span class="points">234543</span></li>
               <li>Robert Bednarz          <span class="points">223439</span></li>
               <li>Andrew Sherwood          <span class="points">123456</span></li>
               <li>Sylvia Gall          <span class="points">108573</span></li>
@@ -14,7 +29,7 @@
               <li>Vincent Burns          <span class="points">97123</span></li>
               <li>Maria Lipscomb          <span class="points">96094</span></li>
               <li>Charles O'Connor          <span class="points">82493</span></li>
-              <li>Hugh McDonald          <span class="points">79201</span></li>
+              <li>Hugh McDonald          <span class="points">79201</span></li> -->
             </ol>
           </div>
         </div>
