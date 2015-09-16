@@ -362,7 +362,8 @@ textarea {
 
       .leaderboard-points-alt {
         font-weight: bold;
-        /*font-family: 'Press Start 2P', cursive;*/
+        font-size: 20px;
+        font-family: 'Press Start 2P', cursive;
       }
 
       .leaderboard-prof {
@@ -373,7 +374,18 @@ textarea {
       }
 
       .leaderboard-name {
-        /*font-family: 'Press Start 2P', cursive;*/
+        font-family: 'Press Start 2P', cursive;
+        font-size: 25px;
+        text-transform: uppercase;
+      }
+
+      .leaderboard-name a {
+        color: #f06d06;
+      }
+
+      .leaderboard-name a:hover {
+        color: red;
+        text-decoration: none;
       }
 
 
