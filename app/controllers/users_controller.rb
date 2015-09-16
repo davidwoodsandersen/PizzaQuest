@@ -33,12 +33,15 @@ class UsersController < ApplicationController
     def dashboard
         authenticate!
         @user = current_user
+        @user_points = @user.visits.length * 100
+
     end
 
     # get '/users/profile' => 'users#profile', as: :profile
     def profile
         authenticate!
         @user = current_user
+        @user_points = @user.visits.length * 100
     end
 
     # get '/users/log_in' => 'users#log_in', as: :log_in
