@@ -467,16 +467,17 @@ textarea {
   z-index: 1;
 }
 
-/*.modal-inner {
+.modal-inner {
   width: 400px;
   height: 350px;
-  background: url('gif2.gif');
-}*/
+  background: url(gif1.gif) no-repeat center center fixed;
+}
 
 .modal-inner h3 {
-  color: black;
-  /*text-shadow: 0px 0px 10px #000000;*/
+  top: 40px;
+  color: white;
   text-align: center;
+  text-shadow: 0px 0px 10px #000000;
 }
 
 .dashboard-modal {
