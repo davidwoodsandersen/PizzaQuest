@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     def show
       @users = User.all
       @user = User.find(params[:id])
+      @user_points = @user.visits.length * 100
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @user }

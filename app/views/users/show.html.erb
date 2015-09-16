@@ -40,7 +40,7 @@
                         <%= image_tag("#{@user.image}", :class => "profile-image") %>
 
                         <% end %>
-                        <p class="profile-points"><%= @user_points %></p>
+                        <p class="profile-points"><%= @user_points %> Points</p>
 
 
 
@@ -55,9 +55,7 @@
 
 
                         <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
-                        <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
 
-                        <p class="profile-ranking">Current Ranking: #93</p>
                         <p class="profile-bio"> <%= @user.tagline %> </p>
                       </div>
                       <div class="class-with-space">
@@ -70,7 +68,7 @@
                           </form>
                         </div> -->
 
-                        <hr />
+
 
                         <ul class="visits">
 
@@ -93,7 +91,6 @@
 
                           </div>
                       </div>
-                      <hr />
                     </div>
                 </div>
 
