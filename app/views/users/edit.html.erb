@@ -80,6 +80,8 @@
           <h2 class="profile-edit">Edit Profile</h2>
 
           <%= form_for @user do |f| %>
+              <%= f.label :username %>
+              <%= f.text_field :username %>
               <%= f.label :tagline %>
               <%= f.text_field :tagline %>
               <%= f.label :image_link %>
