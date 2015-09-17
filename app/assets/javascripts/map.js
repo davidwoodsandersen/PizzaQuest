@@ -1,13 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-
-
-// ------------------------------------------------------
-// ------Alan's google maps js ---------------------------
-// -------------------------------------------------------
-
-
 $(document).ready(function(){
 
   var apiToken = $('#api-token').val();
@@ -17,7 +10,6 @@ $(document).ready(function(){
       }
   });
   console.log(apiToken)
-
 
   $('.pick').click(function(){
        navigator.geolocation.getCurrentPosition(init);
@@ -43,6 +35,8 @@ $(document).ready(function(){
         $("#restaurant-name").val("")
         $("#restaurant-id").val("")
         $("#modal").toggle();
+        //updates points total on dashboard page
+        $('.dashboard-total').text(  parseInt($('.dashboard-total').text() ) + 100  );
       });
   });
 
@@ -58,6 +52,9 @@ $(document).ready(function(){
   var acOptions = {
     types: ['establishment']
   };
+
+
+
   // var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
   // autocomplete.bindTo('bounds',map);
   // var infoWindow = new google.maps.InfoWindow();
@@ -86,7 +83,6 @@ $(document).ready(function(){
 
 
 
-
   // Add an event to OPEN the modal
   $("#open-modal").on("click", function() {
     console.log("You clicked the open button!");
@@ -99,11 +95,6 @@ $(document).ready(function(){
     $("#modal").toggle();
     // location.reload();
   });
-
-
-
-
-
 });
 
 function grabRestInfo (){
@@ -113,23 +104,16 @@ function grabRestInfo (){
   console.log(restid)
   console.log(restname)
 
-
   $('#restaurant-id').val(restid);
   $('#restaurant-name').val(restname);
 };
 
 //------ the "find my location" map function----------
-
-
-
   // -------init function
   var map;
   var service;
   var infoWindow;
   // var marker;
-
-
-
 
   var infoWindow = new google.maps.InfoWindow({
     content: ""
@@ -142,20 +126,16 @@ function grabRestInfo (){
   function handleSearchResults(results, status){
     console.log(results);
 
-
-
-
     for(var i = 0; i < results.length; i ++){
         var marker = new google.maps.Marker({
           position: results[i].geometry.location,
           map: map,
-          icon: 'http://a.deviantart.net/avatars/p/i/pizza-in-flames.gif?1',
+          icon: 'http://www.yespizza.hu/favicon.ico',
           name: results[i].name,
           id: results[i].id,
           rating: results[i].rating,
           vicinity: results[i].vicinity
         });
-
 
         marker.addListener('click', function(){
           var contentString =
@@ -178,14 +158,6 @@ function grabRestInfo (){
       }
     }
 
-
-
-
-
-
-
-
-
   function performSearch(){
     // defining the search parameters (in this case pizza!!!!!)
     console.log('fire in the sky!');
@@ -196,12 +168,9 @@ function grabRestInfo (){
     service.nearbySearch(request, handleSearchResults);
   }
 
-
 // ----------beginning of init function
   function init(location){
     console.log(location);
-
-
 
   // object that described how we want the map to look
     var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
@@ -229,6 +198,7 @@ function grabRestInfo (){
     // this allows them to refresh the search if they want to zoom out and do it again
     $('#refresh').click(performSearch);
 
+//shows circle radius around current location
     var circleOptions = {
       strokeColor: "#0000FF",
       strokeOpacity: 0.8,
@@ -243,18 +213,3 @@ function grabRestInfo (){
   }
 
   // ---------------end of init----------
-
-
-
-
-// $(document).ready(function(){
-//   $('.pick').click(function(){
-//     navigator.geolocation.getCurrentPosition(init);
-//   });
-//
-// });
-
-
-  // ------------------------------------------------------
-  // ------this is the end of Alan's google maps js ---------------------------
-  // -------------------------------------------------------

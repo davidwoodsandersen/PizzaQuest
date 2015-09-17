@@ -38,6 +38,7 @@ var VisitView = Backbone.View.extend({
 var VisitListView = Backbone.View.extend({
     initialize: function(){
         this.listenTo(this.collection, 'add', this.render);
+        this.listenTo(this.collection, 'add', this.renderPoints);
     },
     render: function(){
         this.$el.empty();
