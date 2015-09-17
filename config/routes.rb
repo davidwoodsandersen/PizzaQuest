@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api do
       resources :visits, except: [:new, :edit]
+      resources :comments, except: [:new, :edit]
   end
 
 

@@ -9,16 +9,16 @@ $.ajaxSetup({
     }
 });
 
-var Visit = Backbone.Model.extend({});
-var VisitCollection = Backbone.Collection.extend({
-    model: Visit,
-    url: '/api/visits'
+var Comment = Backbone.Model.extend({});
+var CommentCollection = Backbone.Collection.extend({
+    model: Comment,
+    url: '/api/comments'
 });
 
-var VisitView = Backbone.View.extend({
+var CommentView = Backbone.View.extend({
     tagName: 'li',
-    className: 'visit',
-    template: _.template( $('#visit-view').html() ),
+    className: 'comment',
+    template: _.template( $('#comment-view').html() ),
     render: function() {
         this.$el.empty();
         var html = this.template( this.model.toJSON() );
@@ -26,40 +26,41 @@ var VisitView = Backbone.View.extend({
         this.$el.append($html);
     },
     events:{
-        'click button.remove': 'removeVisit'
+        'click button.remove': 'removeComment'
     },
-    removeVisit: function(){
+    removeComment: function(){
         this.$el.remove();
         this.model.destroy();
 
     }
 });
 
-var VisitListView = Backbone.View.extend({
+var CommentListView = Backbone.View.extend({
     initialize: function(){
         this.listenTo(this.collection, 'add', this.render);
     },
     render: function(){
         this.$el.empty();
-        var visits = this.collection.models;
+        var comments = this.collection.models;
         var view;
-        for (var i = 0; i < visits.length; i++) {
-            view = new VisitView({model: visits[i]});
+        for (var i = 0; i < comments.length; i++) {
+            view = new CommentView({model: comments[i]});
             view.render();
             this.$el.append( view.$el );
         }
     }
 });
 
-var allTheVisits = new VisitCollection();
-var visitsPainter = new VisitListView({
-    collection: allTheVisits,
-    el: $('.visits')
+var allTheComments = new CommentCollection();
+var commentsPainter = new CommentListView({
+    collection: allTheComments,
+    el: $('.comments')
 });
-allTheVisits.fetch();
+allTheComments.fetch();
 
-    $('form.new-visit').on('submit', function(e){
+    $('form.new-comment').on('submit', function(e){
         e.preventDefault();
-        var newReview = $(this).find('input[name="visit[review]"]').val();
-        allTheVisits.create({review: newReview});
+        var newName = $(this).find('input[name="comment[name]"]').val();
+        var newText = $(this).find('input[name="comment[text]"]').val();
+        allTheComments.create({text: newText, name: newName});
     });

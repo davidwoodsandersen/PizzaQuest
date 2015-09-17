@@ -42,6 +42,7 @@ class UsersController < ApplicationController
     # get '/users/profile' => 'users#profile', as: :profile
     def profile
         authenticate!
+        
         @user = current_user
         @user_points = @user.visits.length * 100
         @users = User.all
