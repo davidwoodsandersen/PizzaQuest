@@ -9,6 +9,9 @@
                 <div class="row">
                     <div class="col-sm-6">
 
+
+
+
                       <% if @user.image.length == 0 %>
                       <%= image_tag("noprof.png", :class => "dashboard-image") %>
                       <% elsif @user.image %>
@@ -39,10 +42,13 @@
 
                 <div class="row">
                   <div class="col-sm-8">
+
                     <h3>
                       Map
                       <button id="refresh">More pizza!</button>
                       <button class="pick">Find pizza near me!</button>
+                      <img class="bigLoader" src="https://media.giphy.com/media/l4eA8oZpx71oQ/giphy.gif">
+
                     </h3>
                     <div class="map-container">
                       <div id="map"></div>

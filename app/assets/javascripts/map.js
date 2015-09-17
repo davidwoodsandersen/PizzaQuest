@@ -3,6 +3,12 @@
 
 
 
+//------Alan's fun jquery -------------
+
+
+//
+
+
 // ------------------------------------------------------
 // ------Alan's google maps js ---------------------------
 // -------------------------------------------------------
@@ -10,18 +16,35 @@
 
 $(document).ready(function(){
 
+
   var apiToken = $('#api-token').val();
   $.ajaxSetup({
       headers: {
           "token": apiToken
       }
   });
-  console.log(apiToken)
+  console.log(apiToken);
 
 
-  $('.pick').click(function(){
-       navigator.geolocation.getCurrentPosition(init);
-  });
+    $('.pick').click(function(){
+         navigator.geolocation.getCurrentPosition(init);
+         $('.bigLoader').css('display','inline');
+         $('.bigLoader').css('text-align', 'left');
+       });
+      function hey(){
+        alert('i love internet mostly');
+      }
+
+
+
+
+
+
+
+
+
+
+
 
   $(document).on('click', '#addFromMap', grabRestInfo);
 
@@ -39,9 +62,9 @@ $(document).ready(function(){
       },
       //upon successful post, clear the values from fields
       function(data, status){
-        $("#restaurant-review").val("")
-        $("#restaurant-name").val("")
-        $("#restaurant-id").val("")
+        $("#restaurant-review").val("");
+        $("#restaurant-name").val("");
+        $("#restaurant-id").val("");
         $("#modal").toggle();
       });
   });
@@ -107,16 +130,16 @@ $(document).ready(function(){
 });
 
 function grabRestInfo (){
-  restname =  $('#restname').text()
-  restid = $('#restid').text()
-  console.log(restname)
-  console.log(restid)
-  console.log(restname)
+  restname =  $('#restname').text();
+  restid = $('#restid').text();
+  console.log(restname);
+  console.log(restid);
+  console.log(restname);
 
 
   $('#restaurant-id').val(restid);
   $('#restaurant-name').val(restname);
-};
+}
 
 //------ the "find my location" map function----------
 
@@ -177,13 +200,6 @@ function grabRestInfo (){
         });
       }
     }
-
-
-
-
-
-
-
 
 
   function performSearch(){
