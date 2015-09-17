@@ -3,17 +3,15 @@
 
 
 $(document).ready(function(){
-
-
   var apiToken = $('#api-token').val();
   $.ajaxSetup({
       headers: {
           "token": apiToken
       }
   });
+
+
   console.log(apiToken);
-
-
 
 // getting the info
   $('#jojo').click(function(){
@@ -38,7 +36,6 @@ $(document).ready(function(){
 
 
 
-
   $('.pick').click(function(){
        navigator.geolocation.getCurrentPosition(init);
        autocomplete.bindTo('bounds', map);
@@ -46,6 +43,9 @@ $(document).ready(function(){
   });
 
   $(document).on('click', '#addFromMap', grabRestInfo);
+
+
+
 
 //makes an ajax post to visits api when clicking add visit button from dashboard
   $("#submit-visit").click(function(){
@@ -64,11 +64,13 @@ $(document).ready(function(){
         $("#restaurant-review").val("");
         $("#restaurant-name").val("");
         $("#restaurant-id").val("");
+        $('#autocomplete').val('')
         $("#modal").toggle();
         //updates points total on dashboard page
         $('.dashboard-total').text(  parseInt($('.dashboard-total').text() ) + 100  );
       });
   });
+
 
 // auto complete yo
 
@@ -106,9 +108,21 @@ $(document).ready(function(){
       map.setZoom(17);
     }
     marker.setPosition(place.geometry.location);
-    infoWindow.setContent('<div><strong>' + place.name + '</strong><br>');
+    infoWindow.setContent(
+
+      "<div id=\"map-info-box\">" +
+      "<h3 id=\"restname\">" + place.name + "</h3>" +
+      "<h5 style=\"display: none\" id=\"restid\">" + place.id + "</h5>" +
+      "<p> Rating: " + place.rating + "/5</p>" +
+      "<i>" + place.vicinity + "</i></br></br>" +
+      "<button id=\"addFromMap\" class=\"btn btn-danger\"href='/users/dashboard'>I Ate Here</button>"
+      +"</div>"
+
+
+  );
     infoWindow.open(map, marker);
     google.maps.event.addListener(marker,'click',function(e){
+
 
       infoWindow.open(map, marker);
 
@@ -176,11 +190,24 @@ function grabRestInfo (){
 
         marker.addListener('click', function(){
           var contentString =
+
+            "<div id=\"map-info-box\">" +
             "<h3 id=\"restname\">" + this.name + "</h3>" +
             "<h5 style=\"display: none\" id=\"restid\">" + this.id + "</h5>" +
             "<p> Rating: " + this.rating + "/5</p>" +
             "<i>" + this.vicinity + "</i></br></br>" +
-            "<button id=\"addFromMap\" href='/users/dashboard'>'I Ate Here'</button>";
+            "<button id=\"addFromMap\" class=\"btn btn-danger\" href='/users/dashboard'>I Ate Here</button>";
+            +"</div>"
+
+
+            // "<div id=\"map-info-box\">" +
+            // "<h3 id=\"restname\">" + place.name + "</h3>" +
+            // "<h5 style=\"display: none\" id=\"restid\">" + place.id + "</h5>" +
+            // "<p> Rating: " + place.rating + "/5</p>" +
+            // "<i>" + place.vicinity + "</i></br></br>" +
+            // "<button id=\"addFromMap\" class=\"btn btn-danger\"href='/users/dashboard'>'I Ate Here'</button>"
+            // +"</div>"
+
 
           // Because the infowindow's content will point to the last result's name
           // the way is being built in the loop, we have to monkeypatch the

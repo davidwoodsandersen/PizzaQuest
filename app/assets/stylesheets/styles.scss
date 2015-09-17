@@ -21,7 +21,18 @@ Contents:
 
 
 /* 1. General  */
+#autocomplete{
+  // float: right;
+  height: 30px;
+  font-size: 17px;
+  width: 100%;
+  padding: 7px;
+  border-radius: 4px;
+}
 
+#map-info-box{
+  text-align: center;
+}
 .loading-gif{
 
   width: 50px;
@@ -479,18 +490,18 @@ textarea {
 
 #close-modal {
   position: absolute;
-  left: 96%;
-  margin-top: 3%;
+  left: 91%;
+  margin-top: 4%;
   z-index: 2;
-  font-size: 1.5em;
+  font-size: 2em;
   border-radius: 50%;
   border: 3px solid white;
   height: 1em;
   width: 1em;
+  line-height: 0.95;
   text-align: center;
-  background-color: black;
-  line-height: 1;
   color: white;
+  background-color: black;
 }
 
 #close-modal:hover {
@@ -515,7 +526,7 @@ textarea {
 }
 
 .modal-inner {
-  width: 400px;
+  width: 100%;
   height: 350px;
   background: url(gif1.gif) no-repeat center center fixed;
 }
