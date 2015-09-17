@@ -1,0 +1,57 @@
+<input type="hidden" id="api-token" value="<%= @user.token %>">
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="class-with-space white">
+
+                <!-- Big header w/ username -->
+
+                <div class="row">
+                    <div class="col-sm-12">
+                      <h1 class="profile-username"> <%= @user.username %> </h1>
+                    </div>
+                </div>
+
+
+                <hr />
+
+
+
+
+<h3>Hi <%= @user.username %>, edit your profile information</h3>
+
+
+<%= form_for @user do |f| %>
+    <%= f.label :tagline %>
+    <%= f.text_field :tagline %>
+    <%= f.label :image_link %>
+    <%= f.text_field :image %>
+    <%= f.submit %>
+    <% end %>
+
+
+
+
+
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="class-with-space">
+
+
+        <%= image_tag("#{@user.image}", :class => "profile-image") %>
+        <%= @user.tagline %>
+
+    </div>
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>

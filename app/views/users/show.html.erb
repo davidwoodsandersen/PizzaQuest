@@ -40,7 +40,7 @@
                         <%= image_tag("#{@user.image}", :class => "profile-image") %>
 
                         <% end %>
-                        <p class="profile-points"><%= @user_points %></p>
+                        <p class="profile-points"><%= @user_points %> Points</p>
 
 
 
@@ -55,24 +55,23 @@
 
 
                         <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
-                        <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
 
-                        <p class="profile-ranking">Current Ranking: #93</p>
                         <p class="profile-bio"> <%= @user.tagline %> </p>
                       </div>
                       <div class="class-with-space">
 
-                        <!-- <h3>Add a review:</h3>
+                        <h3>Add a comment:</h3>
                         <div class="extra-bottom">
-                          <form class="new-visit" action="/api/visits" method="post">
-                              <input type="text" name="visit[review]" placeholder="...review">
-                              <input type="submit" name="review" value="New Visit Review">
+                          <form class="new-comment" action="/api/comments" method="post">
+                              <input type="text" name="comment[name]" placeholder="...name">
+                              <input type="text" name="comment[text]" placeholder="...text">
+                              <input type="submit" name="text" value="Comment">
                           </form>
-                        </div> -->
+                        </div>
 
-                        <hr />
 
-                        <ul class="visits">
+
+                        <ul class="comments">
 
                         </ul>
 
@@ -93,7 +92,6 @@
 
                           </div>
                       </div>
-                      <hr />
                     </div>
                 </div>
 

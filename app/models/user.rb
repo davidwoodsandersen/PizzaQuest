@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
     has_secure_password
     has_many :visits
+    has_many :comments
 
     before_create :generate_token
 

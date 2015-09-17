@@ -114,6 +114,10 @@ body {
   float: right;
 }
 
+h3 button {
+  font-size: 14px;
+}
+
 
 
 
@@ -394,12 +398,12 @@ textarea {
 
 
 
-.visits {
+.comments {
   list-style-type: none;
   padding: 0;
 }
 
-.visits li {
+.comments li {
   list-style-type: none;
   display: block;
   width: 100%;
@@ -409,7 +413,7 @@ textarea {
   border-radius: 4px;
 }
 
-.visits button {
+.comments button {
   float: right;
 }
 
