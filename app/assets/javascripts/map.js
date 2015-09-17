@@ -13,6 +13,7 @@ $(document).ready(function(){
 
   $('.pick').click(function(){
        navigator.geolocation.getCurrentPosition(init);
+       $('.loading-gif-container').show()
   });
 
   $(document).on('click', '#addFromMap', grabRestInfo);
@@ -160,6 +161,7 @@ function grabRestInfo (){
 
   function performSearch(){
     // defining the search parameters (in this case pizza!!!!!)
+    $('.loading-gif-container').hide()
     console.log('fire in the sky!');
     var request = {
       bounds: map.getBounds(),

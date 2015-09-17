@@ -39,9 +39,16 @@
 
                 <div class="row">
                   <div class="col-sm-8">
-                    <h3>Map</h3>
-                    <button id="refresh">More pizza!</button>
-                    <button class="pick">Find pizza near me!</button>   
+                    <h3>Map
+                      <button class="pick ">Find pizza near me!</button>
+                        <button id="refresh" class="">More pizza!</button>
+
+                        <span class="loading-gif-container">
+                          <span class="loading-text">It's going to space..</span>
+                          <img class="loading-gif" src="http://25.media.tumblr.com/tumblr_lh2tobkobU1qdped0o1_500.gif" alt="" />
+                        </span>
+                    </h3>
+
                     <div class="map-container">
                       <div id="map"></div>
                     </div>
@@ -53,9 +60,9 @@
                       <input id="restaurant-name" type="text" name="name" readonly>
 
                       <label>Write about your experience:</label>
-                      <textarea id="restaurant-review" name="Text1" rows="10" placeholder="Test"></textarea>
+                      <textarea id="restaurant-review" name="Text1" rows="10" placeholder="Write a review..."></textarea>
                       <input id="restaurant-id" type="hidden">
-                      <input id='submit-visit' type="button" value="Add Visit">
+                      <input id='submit-visit' class="btn btn-danger" type="button" value="Add Visit">
 
 
                     </form>
