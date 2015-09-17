@@ -57,6 +57,7 @@
                         <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
 
                         <p class="profile-bio"> <%= @user.tagline %> </p>
+                        <a href="/users/profile/edit">Edit Profile</a>
                       </div>
                       <div class="class-with-space">
 
@@ -94,6 +95,17 @@
                       </div>
 
                     </div>
+                    <%if current_user%>
+
+
+
+
+                    <%else%>
+
+                      <li></li>
+
+
+                    <%end%>
                 </div>
 
 
