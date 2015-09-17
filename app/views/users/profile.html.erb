@@ -12,14 +12,14 @@
 
                 <!-- Big header w/ username -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-12">
                       <h1 class="profile-username"> <%= @user.username %> </h1>
                     </div>
                 </div>
 
 
-                <hr />
+                <hr /> -->
 
 
 
@@ -29,6 +29,9 @@
                   <div class="row">
                     <div class="col-sm-8">
                       <div class="class-with-space">
+
+
+                        <!-- <div class="profile-section"> -->
 
                         <% if @user.image == nil || @user.image.length == 0 %>
 
@@ -40,6 +43,11 @@
                         <%= image_tag("#{@user.image}", :class => "profile-image") %>
 
                         <% end %>
+
+
+                        <h1 class="profile-username"> <%= @user.username %> </h1>
+
+
                         <p class="profile-points"><%= @user_points %> Points</p>
 
 
@@ -57,20 +65,25 @@
                         <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
 
                         <p class="profile-bio"> <%= @user.tagline %> </p>
+                        <a href="/users/profile/edit">Edit Profile</a>
+
+
+
+                        <!-- </div> -->
                       </div>
                       <div class="class-with-space">
 
-                        <!-- <h3>Add a review:</h3>
+                        <h3>Add a comment:</h3>
                         <div class="extra-bottom">
-                          <form class="new-visit" action="/api/visits" method="post">
-                              <input type="text" name="visit[review]" placeholder="...review">
-                              <input type="submit" name="review" value="New Visit Review">
+                          <form class="new-comment" action="/api/comments" method="post">
+                              <input type="text" name="comment[text]" placeholder="...text">
+                              <input type="submit" name="text" value="Comment">
                           </form>
-                        </div> -->
+                        </div>
 
+                        <hr />
 
-
-                        <ul class="visits">
+                        <ul class="comments">
 
                         </ul>
 
@@ -93,6 +106,10 @@
                       </div>
 
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> be8b7ce9a321c1fa23c1dd4c1ffe0ae8b57ff561
                 </div>
 
 

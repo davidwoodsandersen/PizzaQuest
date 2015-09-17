@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   namespace :api do
       resources :visits, except: [:new, :edit]
+      resources :comments, except: [:new, :edit]
   end
-
 
   get '/users/dashboard' => 'users#dashboard', as: :dashboard
   get '/users/profile' => 'users#profile', as: :profile
