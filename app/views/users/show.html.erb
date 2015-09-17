@@ -1,48 +1,21 @@
 <input type="hidden" id="api-token" value="<%= @user.token %>">
 
-
-
-
-
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
       <div class="class-with-space white">
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="class-with-space">
 
-                <!-- Big header w/ username -->
+              <% if @user.image == nil || @user.image.length == 0 %>
+                <%= image_tag("noprof.png", :class => "profile-image") %>
+              <% elsif @user.image %>
+                <%= image_tag("#{@user.image}", :class => "profile-image") %>
+              <% end %>
 
-                <div class="row">
-                    <div class="col-sm-12">
-                      <h1 class="profile-username"> <%= @user.username %> </h1>
-                    </div>
-                </div>
-
-
-                <hr />
-
-
-
-<!-- <h3>welcome back <%= @user.username %></h3> -->
-
-
-                  <div class="row">
-                    <div class="col-sm-8">
-                      <div class="class-with-space">
-
-                        <% if @user.image == nil || @user.image.length == 0 %>
-
-                        <%= image_tag("noprof.png", :class => "profile-image") %>
-
-
-                        <% elsif @user.image %>
-
-                        <%= image_tag("#{@user.image}", :class => "profile-image") %>
-
-                        <% end %>
-                        <p class="profile-points"><%= @user_points %> Points</p>
-
-
+              <h1 class="profile-username"> <%= @user.username %> </h1>
+              <p class="profile-points"> <%= @user_points %> Points </p>
 
                         <% userArray = [] %>
                         <% @users.each do |x| %>
@@ -55,29 +28,26 @@
 
 
                         <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
-
                         <p class="profile-bio"> <%= @user.tagline %> </p>
-                      </div>
-                      <div class="class-with-space">
 
-                        <h3>Add a comment:</h3>
+           </div>
+           <div class="class-with-space">
+
+                        <h3>Leave a comment:</h3>
                         <div class="extra-bottom">
                           <form class="new-comment" action="/api/comments" method="post">
-                              <!-- <input type="text" name="comment[name]" placeholder="...name"> -->
                               <input type="text" name="comment[text]" placeholder="...text">
                               <input type="submit" name="text" value="Comment">
                           </form>
                         </div>
-
-
-
+                        <hr />
                         <ul class="comments">
-
                         </ul>
 
-                    </div>
-                    </div>
-                    <div class="col-sm-4">
+          </div>
+        </div>
+        <div class="col-sm-4">
+
                       <h3>Places I've been:</h3>
                       <div class="profile-places">
 
@@ -91,15 +61,12 @@
                         <% end %>
 
                           </div>
-                      </div>
-                    </div>
-                </div>
-
-
+                        <hr />
+        </div>
+      </div>
+    </div>
 
 <%= javascript_include_tag 'users' %>
-
-
 
       </div>
     </div>

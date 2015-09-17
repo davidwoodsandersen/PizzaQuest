@@ -87,6 +87,13 @@ body {
   border: 1px solid #e3e3e3;
 }
 
+.block-2 {
+  box-sizing: border-box;
+  padding: 20px;
+  display: block;
+  border: 1px solid #e3e3e3;
+}
+
 .class-with-space { /* Adds extra padding/margin to a div */
   margin: 30px 10px 10px 10px;
   padding: 20px;
@@ -103,6 +110,10 @@ body {
   padding-bottom: 70px; /* This is mainly here to keep the submit button inside the div on the homepage */
 }
 
+.orange-border {
+  border: 1px solid #f06d06;
+}
+
 .col-centered { /* Lets you center a column of any width */
     float: none;
     margin: 0 auto;
@@ -110,6 +121,10 @@ body {
 
 .extra-bottom { /* Adds extra space to the bottom of a div/element */
   padding-bottom: 70px;
+}
+
+.extra-top-margin {
+  margin-top: 80px;
 }
 
 .gradient { /* Adds gradient to the background of a div */
@@ -291,8 +306,8 @@ textarea {
       /* 4c. Profile */
 
       .profile-username {
-        text-align: center;
-        font-size: 45px;
+        padding-top: 10px;
+        font-size: 25px;
         color: #222222;
       }
 
@@ -328,6 +343,15 @@ textarea {
         overflow: scroll;
       }
 
+      .profile-section {
+        height: 240px;
+      }
+
+      .profile-edit {
+        font-size: 25px;
+        color: #FF6347;
+      }
+
 
 
 
@@ -335,7 +359,7 @@ textarea {
 
       .leaderboard-heading {
         text-align: center;
-        font-size: 40px;
+        font-size: 25px;
         font-weight: bold;
         font-family: 'Press Start 2P', cursive;
         text-transform: uppercase;
