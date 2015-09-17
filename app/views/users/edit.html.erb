@@ -12,28 +12,19 @@
 
                 <!-- Big header w/ username -->
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-12">
                       <h1 class="profile-username"> <%= @user.username %> </h1>
                     </div>
                 </div>
 
 
-                <hr />
+                <hr /> -->
 
 
 
 
-<h3>Hi <%= @user.username %>, edit your profile information</h3>
-
-
-<%= form_for @user do |f| %>
-    <%= f.label :tagline %>
-    <%= f.text_field :tagline %>
-    <%= f.label :image_link %>
-    <%= f.text_field :image %>
-    <%= f.submit %>
-    <% end %>
+<!-- <h3>Hi <%= @user.username %>, edit your profile information</h3> -->
 
 
 
@@ -44,11 +35,83 @@
         <div class="class-with-space">
 
 
-        <%= image_tag("#{@user.image}", :class => "profile-image") %>
-        <%= @user.tagline %>
+          <!-- <div class="profile-section"> -->
+
+
+          <% if @user.image == nil || @user.image.length == 0 %>
+
+          <%= image_tag("noprof.png", :class => "profile-image") %>
+
+
+          <% elsif @user.image %>
+
+          <%= image_tag("#{@user.image}", :class => "profile-image") %>
+
+          <% end %>
+
+
+          <h1 class="profile-username"> <%= @user.username %> </h1>
+
+
+
+          <p class="profile-points"><%= @user_points %> Points</p>
+
+
+
+          <% userArray = [] %>
+          <% @users.each do |x| %>
+          <% userArray.push(x) %>
+          <% end %>
+          <% leaderBoardArray = userArray.sort_by {|user| -user.visits.length} %>
+
+          <% selectedPersonScore = leaderBoardArray.index(@user) + 1%>
+          <% selectedPersonScore %>
+
+
+          <p class="profile-ranking">Current Ranking: <%= selectedPersonScore %></p>
+
+          <p class="profile-bio"> <%= @user.tagline %> </p>
+
+
+          <!-- </div> -->
+
+          <div class="class-with-space extra-top-margin extra-bottom orange-border">
+
+          <h2 class="profile-edit">Edit Profile</h2>
+
+          <%= form_for @user do |f| %>
+              <%= f.label :tagline %>
+              <%= f.text_field :tagline %>
+              <%= f.label :image_link %>
+              <%= f.text_field :image %>
+              <%= f.submit %>
+          <% end %>
+
+        </div>
 
     </div>
 </div>
+
+
+<div class="col-sm-4">
+  <h3>Places I've been:</h3>
+  <div class="profile-places">
+
+    <% @user.visits.each do | visit | %>
+
+      <div class="block">
+        <h4> <%= visit.restaurant_name %> </h4>
+        <p> <%= visit.review %> </p>
+      </div>
+
+    <% end %>
+
+      </div>
+
+    <hr />
+  </div>
+
+
 </div>
 
             </div>

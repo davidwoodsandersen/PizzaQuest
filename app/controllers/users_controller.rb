@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     # get '/users/profile' => 'users#profile', as: :profile
     def profile
         authenticate!
-        
+
         @user = current_user
         @user_points = @user.visits.length * 100
         @users = User.all
@@ -58,6 +58,8 @@ class UsersController < ApplicationController
         authenticate!
         @user = current_user
         # @user = User.find(params[:id])
+        @user_points = @user.visits.length * 100
+        @users = User.all
     end
 
     #           PATCH  /users/:id(.:format)       users#update
