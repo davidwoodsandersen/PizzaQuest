@@ -1,22 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-<<<<<<< HEAD
 
-
-//------Alan's fun jquery -------------
-
-
-//
-
-
-// ------------------------------------------------------
-// ------Alan's google maps js ---------------------------
-// -------------------------------------------------------
-
-
-=======
->>>>>>> d133f39a375fdee7650b4efd6ad67f58aaf9de47
 $(document).ready(function(){
 
 
@@ -29,14 +14,21 @@ $(document).ready(function(){
   console.log(apiToken);
 
 
-    $('.pick').click(function(){
-         navigator.geolocation.getCurrentPosition(init);
-         $('.bigLoader').css('display','inline');
-         $('.bigLoader').css('text-align', 'left');
-       });
-      function hey(){
-        alert('i love internet mostly');
-      }
+
+// getting the info
+  $('#jojo').click(function(){
+    entireInput = $('#autocomplete').val();
+    jo = entireInput.split(",");
+    console.log(jo);
+  });
+
+  // restid = $('#restid').text();
+  // console.log(restname);
+  // console.log(restid);
+  // console.log(restname);
+  //
+  // $('#restaurant-id').val(restid);
+  // $('#restaurant-name').val(restname);
 
 
 
@@ -47,14 +39,11 @@ $(document).ready(function(){
 
 
 
-<<<<<<< HEAD
-
-=======
   $('.pick').click(function(){
        navigator.geolocation.getCurrentPosition(init);
-       $('.loading-gif-container').show()
+       autocomplete.bindTo('bounds', map);
+       $('.loading-gif-container').show();
   });
->>>>>>> d133f39a375fdee7650b4efd6ad67f58aaf9de47
 
   $(document).on('click', '#addFromMap', grabRestInfo);
 
@@ -81,10 +70,10 @@ $(document).ready(function(){
       });
   });
 
-
+// auto complete yo
 
   var mapOptions = {
-      center: new google.maps.LatLng(37.7833, -122.4167),
+      center: new google.maps.LatLng(40.7127, -74.0059),
       zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -95,34 +84,41 @@ $(document).ready(function(){
   };
 
 
+// auto complete stuff
 
-  // var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
-  // autocomplete.bindTo('bounds',map);
-  // var infoWindow = new google.maps.InfoWindow();
-  // var marker = new google.maps.Marker({
-  //   map: map
-  // });
-  //
-  // google.maps.event.addListener(autocomplete, 'place_changed', function() {
-  //   infoWindow.close();
-  //   var place = autocomplete.getPlace();
-  //   if (place.geometry.viewport) {
-  //     map.fitBounds(place.geometry.viewport);
-  //   } else {
-  //     map.setCenter(place.geometry.location);
-  //     map.setZoom(17);
-  //   }
-  //   marker.setPosition(place.geometry.location);
-  //   infoWindow.setContent('<div><strong>' + place.name + '</strong><br>');
-  //   infoWindow.open(map, marker);
-  //   google.maps.event.addListener(marker,'click',function(e){
-  //
-  //     infoWindow.open(map, marker);
-  //
-  //   });
-  // });
+  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
+
+  var infoWindow = new google.maps.InfoWindow();
+  var marker = new google.maps.Marker({
+    map: map
+  });
 
 
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    autocomplete.bindTo('bounds', map);
+
+    infoWindow.close();
+    var place = autocomplete.getPlace();
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);
+    }
+    marker.setPosition(place.geometry.location);
+    infoWindow.setContent('<div><strong>' + place.name + '</strong><br>');
+    infoWindow.open(map, marker);
+    google.maps.event.addListener(marker,'click',function(e){
+
+      infoWindow.open(map, marker);
+
+    });
+
+    autocomplete.bindTo('bounds', map);
+  });
+
+
+// end of autocomplete
 
   // Add an event to OPEN the modal
   $("#open-modal").on("click", function() {
@@ -199,13 +195,10 @@ function grabRestInfo (){
       }
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> d133f39a375fdee7650b4efd6ad67f58aaf9de47
   function performSearch(){
     // defining the search parameters (in this case pizza!!!!!)
-    $('.loading-gif-container').hide()
+    $('.loading-gif-container').hide();
     console.log('fire in the sky!');
     var request = {
       bounds: map.getBounds(),
