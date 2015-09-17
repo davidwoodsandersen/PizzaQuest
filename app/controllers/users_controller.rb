@@ -53,7 +53,9 @@ class UsersController < ApplicationController
 
     # edit_user GET    /users/:id/edit(.:format)  users#edit
     def edit
-        @user = User.find(params[:id])
+        authenticate!
+        @user = current_user
+        # @user = User.find(params[:id])
     end
 
     #           PATCH  /users/:id(.:format)       users#update
@@ -61,10 +63,9 @@ class UsersController < ApplicationController
     def update
         user = User.find(params[:id])
         user.update(user_params)
-        redirect_to user_path(user)
+        redirect_to "/users/profile"
+        # redirect_to user_path(user)
     end
-
-
 
 
 

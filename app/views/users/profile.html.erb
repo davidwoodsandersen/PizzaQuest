@@ -58,6 +58,7 @@
                         <p class="profile-bio">Part-time actor, full-time pizza lover. People's Sexiest Man Alive 1984. Pepperoni all the way.</p>
 
                         <p class="profile-bio"> <%= @user.tagline %> </p>
+                        <a href="/users/profile/edit">Edit Profile</a>
                       </div>
                       <div class="class-with-space">
 
@@ -94,6 +95,17 @@
                       </div>
                       <hr />
                     </div>
+                    <%if current_user%>
+
+
+
+
+                    <%else%>
+
+                      <li></li>
+
+
+                    <%end%>
                 </div>
 
 
