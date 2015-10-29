@@ -1,7 +1,5 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-
-
 $(document).ready(function(){
   var apiToken = $('#api-token').val();
   $.ajaxSetup({
@@ -9,55 +7,29 @@ $(document).ready(function(){
           "token": apiToken
       }
   });
-
-
-  console.log(apiToken);
-
-// getting the info
+  // getting the info
   $('#jojo').click(function(){
     entireInput = $('#autocomplete').val();
     jo = entireInput.split(",");
     console.log(jo);
   });
-
-  // restid = $('#restid').text();
-  // console.log(restname);
-  // console.log(restid);
-  // console.log(restname);
-  //
-  // $('#restaurant-id').val(restid);
-  // $('#restaurant-name').val(restname);
-
-
-
-
-
-
-
-
-
+  //'find pizza near me btn'
   $('.pick').click(function(){
        navigator.geolocation.getCurrentPosition(init);
        autocomplete.bindTo('bounds', map);
        $('.loading-gif-container').show();
   });
-
   $(document).on('click', '#addFromMap', grabRestInfo);
-
-
-
 
 //makes an ajax post to visits api when clicking add visit button from dashboard
   $("#submit-visit").click(function(){
       $.post("/api/visits",
         {
           visit: {
-
           review: $("#restaurant-review").val(),
           restaurant_name: $("#restaurant-name").val(),
           restaurant_id: $("#restaurant-id").val()
           }
-
       },
       //upon successful post, clear the values from fields
       function(data, status){
@@ -70,35 +42,24 @@ $(document).ready(function(){
         $('.dashboard-total').text(  parseInt($('.dashboard-total').text() ) + 100  );
       });
   });
-
-
 // auto complete yo
-
   var mapOptions = {
       center: new google.maps.LatLng(40.7127, -74.0059),
       zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   var acOptions = {
     types: ['establishment']
   };
-
-
 // auto complete stuff
-
   var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),acOptions);
-
   var infoWindow = new google.maps.InfoWindow();
   var marker = new google.maps.Marker({
     map: map
   });
-
-
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     autocomplete.bindTo('bounds', map);
-
     infoWindow.close();
     var place = autocomplete.getPlace();
     if (place.geometry.viewport) {
@@ -108,8 +69,8 @@ $(document).ready(function(){
       map.setZoom(17);
     }
     marker.setPosition(place.geometry.location);
+    //html display for info window search results
     infoWindow.setContent(
-
       "<div id=\"map-info-box\">" +
       "<h3 id=\"restname\">" + place.name + "</h3>" +
       "<h5 style=\"display: none\" id=\"restid\">" + place.id + "</h5>" +
@@ -117,29 +78,19 @@ $(document).ready(function(){
       "<i>" + place.vicinity + "</i></br></br>" +
       "<button id=\"addFromMap\" class=\"btn btn-danger\"href='/users/dashboard'>I Ate Here</button>"
       +"</div>"
-
-
   );
     infoWindow.open(map, marker);
     google.maps.event.addListener(marker,'click',function(e){
-
-
       infoWindow.open(map, marker);
-
     });
-
     autocomplete.bindTo('bounds', map);
   });
-
-
-// end of autocomplete
-
+  // end of autocomplete
   // Add an event to OPEN the modal
   $("#open-modal").on("click", function() {
     console.log("You clicked the open button!");
     $("#modal").toggle();
   });
-
   // Add an event to CLOSE the modal
   $("#close-modal").on("click", function() {
     console.log("You clicked the close button.");
@@ -147,7 +98,7 @@ $(document).ready(function(){
     // location.reload();
   });
 });
-
+//fills review form using visisted restaurant info
 function grabRestInfo (){
   restname =  $('#restname').text();
   restid = $('#restid').text();
@@ -198,31 +149,17 @@ function grabRestInfo (){
             "<i>" + this.vicinity + "</i></br></br>" +
             "<button id=\"addFromMap\" class=\"btn btn-danger\" href='/users/dashboard'>I Ate Here</button>";
             +"</div>"
-
-
-            // "<div id=\"map-info-box\">" +
-            // "<h3 id=\"restname\">" + place.name + "</h3>" +
-            // "<h5 style=\"display: none\" id=\"restid\">" + place.id + "</h5>" +
-            // "<p> Rating: " + place.rating + "/5</p>" +
-            // "<i>" + place.vicinity + "</i></br></br>" +
-            // "<button id=\"addFromMap\" class=\"btn btn-danger\"href='/users/dashboard'>'I Ate Here'</button>"
-            // +"</div>"
-
-
           // Because the infowindow's content will point to the last result's name
           // the way is being built in the loop, we have to monkeypatch the
           // infowindow content, everytime we click on a marker. This is not the ideal way
           // maybe add to your list of things you can refactor later.
           infoWindow.setContent(contentString);
-
           // Instead of marker, we should use the 'this' object
           // to refer to actual marker being clicked
           infoWindow.open(map, this);
         });
       }
     }
-
-
   function performSearch(){
     // defining the search parameters (in this case pizza!!!!!)
     $('.loading-gif-container').hide();
@@ -245,22 +182,17 @@ function grabRestInfo (){
       zoom: 15,
       mapTypeId : google.maps.MapTypeId.ROADMAP
     };
-
   // this is the line that creates the map
     map = new google.maps.Map(document.getElementById('map'),
       mapOptions);
-
     var marker = new google.maps.Marker({
       position: currentLocation,
       map : map
     });
-
     service = new google.maps.places.PlacesService(map);
-
     // need this line to ensure that the map loads BEFORE trying to set bounds to it!
     // the reason we put "once" is so that if I zoom in and out it doens't re-run the function!
     google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
-
     // this allows them to refresh the search if they want to zoom out and do it again
     $('#refresh').click(performSearch);
 

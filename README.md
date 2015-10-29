@@ -5,6 +5,7 @@
 
 PizzaQuest is a food locator app with a game component where users compare who has
 eaten at the most pizza places in NYC.
+![](/README_Images/pizzaquest.gif)
 
 ###Dashboard Page Screenshot:
 

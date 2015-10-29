@@ -8,17 +8,11 @@
               <div class="class-with-space white">
                 <div class="row">
                     <div class="col-sm-6">
-
-
-
-
                       <% if @user.image.length == 0 %>
                       <%= image_tag("noprof.png", :class => "dashboard-image") %>
                       <% elsif @user.image %>
                       <%= image_tag("#{@user.image}", :class => "dashboard-image") %>
                       <% end %>
-
-
 
                       <h1 class="dashboard-username"> <%= @user.username %> </h1>
                       <p class="dashboard-total"><%= @user_points %></p>
@@ -42,22 +36,14 @@
 
                 <div class="row">
                   <div class="col-sm-8">
-
-
                     <h3>
-
                       <button class="btn btn-warning pick ">Find Pizza Near Me!</button>
                         <button id="refresh" class="btn btn-warning ">More Pizza!</button>
                         <!-- <button id="jojo" class="">More zazz!</button> -->
-
-
                         <span class="loading-gif-container">
                           <span class="loading-text">Simmer down, it's going to space..</span>
                           <img class="loading-gif" src="http://25.media.tumblr.com/tumblr_lh2tobkobU1qdped0o1_500.gif" alt="" />
                         </span>
-
-
-
                     </h3>
                     <span class="">
                       <input type="text" id="autocomplete">
@@ -89,8 +75,6 @@
                           <div class="modal-inner">
 
                             <h3 class="modal-headers">Your visit has been logged!</h3>
-
-
                           </div>
                         </div>
                       </div>
